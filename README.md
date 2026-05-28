@@ -1,0 +1,1 @@
+# taiwanwizardstable.github.io

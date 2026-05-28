@@ -1,0 +1,64 @@
+@import 
+  font-size:36px;
+
+  font-weight:700;
+
+  letter-spacing:4px;
+
+  color:#d8c39a;
+
+  text-shadow:
+  0 0 12px rgba(0,0,0,0.8),
+  0 0 30px rgba(0,0,0,1);
+}
+
+h2{
+
+  margin-top:22px;
+
+  font-size:20px;
+
+  font-weight:400;
+
+  letter-spacing:12px;
+
+  text-transform:uppercase;
+
+  color:rgba(216,195,154,0.88);
+
+  text-shadow:
+  0 0 10px rgba(0,0,0,0.8);
+
+}
+
+a{
+
+  display:inline-block;
+
+  margin-top:42px;
+
+  font-size:14px;
+
+  letter-spacing:6px;
+
+  text-decoration:none;
+
+  color:rgba(216,195,154,0.72);
+
+  transition:0.3s;
+
+  text-shadow:
+  0 0 10px rgba(0,0,0,0.8);
+
+}
+
+a:hover{
+
+  color:#f3d9a4;
+
+  transform:translateY(-2px);
+
+  text-shadow:
+  0 0 18px rgba(216,195,154,0.45);
+
+｝

@@ -1,64 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Noto+Serif+TC:wght@300;400;600&display=swap');
 
-  font-size:36px;
-
-  font-weight:700;
-
-  letter-spacing:4px;
-
-  color:#d8c39a;
-
-  text-shadow:
-  0 0 12px rgba(0,0,0,0.8),
-  0 0 30px rgba(0,0,0,1);
+*{
+  box-sizing:border-box;
+  scroll-behavior:smooth;
 }
 
-h2{
+body{
+  margin:0;
 
-  margin-top:22px;
+  background:#050505;
 
-  font-size:20px;
+  color:white;
 
-  font-weight:400;
-
-  letter-spacing:12px;
-
-  text-transform:uppercase;
-
-  color:rgba(216,195,154,0.88);
-
-  text-shadow:
-  0 0 10px rgba(0,0,0,0.8);
-
+  font-family:"Noto Serif TC", serif;
 }
 
-a{
+.page{
 
-  display:inline-block;
+  min-height:100vh;
 
-  margin-top:42px;
+  background-image:
+  linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.88)),
+  url("https://i.ibb.co/vCCS3VBg/IMG-0580.png");
 
-  font-size:14px;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
 
-  letter-spacing:6px;
-
-  text-decoration:none;
-
-  color:rgba(216,195,154,0.72);
-
-  transition:0.3s;
-
-  text-shadow:
-  0 0 10px rgba(0,0,0,0.8);
-
+  display:flex;
 }
 
-a:hover{
+/* =========================
+左側目錄
+========================= */
 
-  color:#f3d9a4;
+.sidebar{
 
-  transform:translateY(-2px);
+  width:280px;
 
-  text-shadow:
-  0 0 18px rgba(216,195,154,0.45);
+  min-height:100vh;
 
-}
+  padding:50px 28px;
+
+  border-right:
+  1px solid rgba(184,148,92,0.2);
+
+  background:rgba(0,0,0,0.45);
+
+  backdrop-filter:blur(8px);
+  

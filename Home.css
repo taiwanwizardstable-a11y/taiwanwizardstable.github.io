@@ -2,20 +2,11 @@
 
 *{
   box-sizing:border-box;
-  scroll-behavior:smooth;
 }
 
 body{
+
   margin:0;
-
-  background:#050505;
-
-  color:white;
-
-  font-family:"Noto Serif TC", serif;
-}
-
-.page{
 
   min-height:100vh;
 
@@ -24,28 +15,197 @@ body{
   url("https://i.ibb.co/vCCS3VBg/IMG-0580.png");
 
   background-size:cover;
+
   background-position:center;
+
   background-repeat:no-repeat;
+
+  color:white;
+
+  font-family:"Noto Serif TC", serif;
+}
+
+/* =========================
+整體排版
+========================= */
+
+.page{
+
+  min-height:100vh;
 
   display:flex;
 }
 
 /* =========================
-左側目錄
+左側欄位
 ========================= */
 
 .sidebar{
 
-  width:280px;
+  width:260px;
 
   min-height:100vh;
 
-  padding:50px 28px;
+  padding:50px 26px;
+
+  background:rgba(0,0,0,0.48);
 
   border-right:
-  1px solid rgba(184,148,92,0.2);
+  1px solid rgba(184,148,92,0.18);
 
-  background:rgba(0,0,0,0.45);
+  backdrop-filter:blur(10px);
 
-  backdrop-filter:blur(8px);
-  
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+}
+
+.logo{
+
+  width:170px;
+
+  margin-bottom:60px;
+
+  filter:
+  drop-shadow(0 0 18px rgba(184,148,92,0.35));
+}
+
+nav{
+
+  width:100%;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:20px;
+}
+
+nav a{
+
+  color:#b8945c;
+
+  text-decoration:none;
+
+  font-family:"Cinzel", serif;
+
+  letter-spacing:4px;
+
+  font-size:14px;
+
+  padding:14px 10px;
+
+  border-bottom:
+  1px solid rgba(184,148,92,0.15);
+
+  transition:0.3s;
+}
+
+nav a:hover{
+
+  color:#f0d08a;
+
+  padding-left:20px;
+
+  text-shadow:
+  0 0 14px rgba(184,148,92,0.35);
+}
+
+/* =========================
+右側內容
+========================= */
+
+.content{
+
+  flex:1;
+
+  min-height:100vh;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  padding:80px;
+}
+
+section{
+
+  max-width:850px;
+
+  text-align:center;
+}
+
+/* =========================
+標題
+========================= */
+
+.small-title{
+
+  color:rgba(184,148,92,0.75);
+
+  font-family:"Cinzel", serif;
+
+  letter-spacing:6px;
+
+  font-size:13px;
+
+  text-transform:uppercase;
+}
+
+h1{
+
+  margin:18px 0;
+
+  color:#d8c39a;
+
+  font-family:"Cinzel", serif;
+
+  font-size:52px;
+
+  letter-spacing:4px;
+
+  text-shadow:
+  0 0 18px rgba(0,0,0,0.9);
+}
+
+.intro{
+
+  margin-top:40px;
+
+  text-align:center;
+
+  line-height:2.4;
+
+  letter-spacing:1px;
+
+  color:#b8945c;
+
+  font-size:15px;
+}
+
+/* =========================
+底部圖片
+========================= */
+
+.intro-image{
+
+  width:65%;
+
+  max-width:420px;
+
+  margin-top:60px;
+
+  border-radius:16px;
+
+  border:
+  1px solid rgba(184,148,92,0.22);
+
+  box-shadow:
+  0 0 40px rgba(0,0,0,0.45);
+
+  object-fit:cover;
+}

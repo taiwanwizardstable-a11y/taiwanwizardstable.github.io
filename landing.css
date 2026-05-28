@@ -38,6 +38,8 @@ body{
   align-items:center;
 
   text-align:center;
+
+  transform:translateY(-80px);
 }
 
 .logo{

@@ -190,7 +190,9 @@ h1{
 
 .hero-photo{
 
-  margin-bottom:70px;
+  max-width:750px;
+
+  margin:0 auto 70px;
 }
 
 .hero-photo img{
@@ -214,14 +216,16 @@ h1{
 
 .photo-grid{
 
+  max-width:950px;
+
+  margin:20px auto 0;
+
   display:grid;
 
-  grid-template-columns:
-  repeat(4,1fr);
+  grid-template-columns:repeat(4,1fr);
 
   gap:22px;
 
-  margin-top:20px;
 }
 
 .photo-grid img{

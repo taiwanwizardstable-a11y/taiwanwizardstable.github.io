@@ -216,25 +216,25 @@ h1{
 
 .photo-grid{
 
-  max-width:950px;
+  max-width:900px;
 
   margin:20px auto 0;
 
   display:grid;
 
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:
+  repeat(4,1fr);
 
-  gap:22px;
-
+  gap:18px;
 }
 
 .photo-grid img{
 
   width:100%;
 
-  aspect-ratio:1/1;
+  height:auto;
 
-  object-fit:cover;
+  display:block;
 
   border-radius:18px;
 
@@ -248,7 +248,6 @@ h1{
 
   cursor:pointer;
 }
-
 .photo-grid img:hover{
 
   transform:

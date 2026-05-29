@@ -212,7 +212,7 @@ h1{
 
 .snake-badge{
 
-  transform:scale(2);
+  transform:scale(2.5);
 }
 
 /* 獅 */
@@ -226,7 +226,7 @@ h1{
 
 .eagle-badge{
 
-  transform:scale(0.88);
+  transform:scale(0.3);
 }
 
 /* 獾 */

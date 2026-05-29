@@ -1,0 +1,471 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Noto+Serif+TC:wght@300;400;600&display=swap');
+
+*{
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:#050505;
+  color:white;
+  font-family:"Noto Serif TC", serif;
+}
+
+.page{
+
+  min-height:100vh;
+
+  background-image:
+  linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.88)),
+  url("https://i.ibb.co/vCCS3VBg/IMG-0580.png");
+
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+
+  display:flex;
+}
+
+/* =========================
+左側欄位
+========================= */
+
+.sidebar{
+
+  width:280px;
+
+  min-height:100vh;
+
+  padding:50px 28px;
+
+  border-right:
+  1px solid rgba(184,148,92,0.2);
+
+  background:rgba(0,0,0,0.45);
+
+  backdrop-filter:blur(8px);
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.logo{
+
+  width:160px;
+
+  margin-bottom:60px;
+
+  filter:
+  drop-shadow(0 0 12px rgba(184,148,92,0.3));
+}
+
+nav{
+
+  width:100%;
+
+  display:flex;
+  flex-direction:column;
+
+  gap:22px;
+}
+
+nav a{
+
+  color:#b8945c;
+
+  text-decoration:none;
+
+  font-family:"Cinzel", serif;
+
+  font-size:14px;
+
+  letter-spacing:4px;
+
+  padding:14px 12px;
+
+  border-bottom:
+  1px solid rgba(184,148,92,0.18);
+
+  transition:0.3s;
+}
+
+nav a:hover{
+
+  color:#e1bf87;
+
+  padding-left:22px;
+
+  text-shadow:
+  0 0 16px rgba(184,148,92,0.4);
+}
+
+/* =========================
+右側內容
+========================= */
+
+.content{
+
+  flex:1;
+
+  min-height:100vh;
+
+  padding:80px;
+}
+
+.members-section{
+
+  max-width:1200px;
+
+  margin:auto;
+}
+
+.small-title{
+
+  color:rgba(184,148,92,0.7);
+
+  font-family:"Cinzel", serif;
+
+  font-size:13px;
+
+  letter-spacing:6px;
+
+  text-transform:uppercase;
+}
+
+h1{
+
+  margin:18px 0 30px;
+
+  color:#d8c39a;
+
+  font-family:"Cinzel", serif;
+
+  font-size:52px;
+
+  letter-spacing:4px;
+
+  text-shadow:
+  0 0 18px rgba(0,0,0,0.9);
+}
+
+.members-intro{
+
+  margin-bottom:80px;
+
+  line-height:2;
+
+  color:#b8945c;
+}
+
+/* =========================
+學院區塊
+========================= */
+
+.group-block{
+
+  margin-bottom:90px;
+
+  padding:35px;
+
+  border-radius:22px;
+
+  backdrop-filter:blur(10px);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+}
+
+.group-header{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:25px;
+
+  margin-bottom:35px;
+}
+
+.group-badge{
+
+  width:78px;
+
+  filter:
+  drop-shadow(0 0 18px rgba(255,255,255,0.12));
+}
+
+.group-header h2{
+
+  margin:0;
+
+  font-family:"Cinzel", serif;
+
+  font-size:32px;
+
+  letter-spacing:2px;
+}
+
+.group-header p{
+
+  margin-top:8px;
+
+  letter-spacing:3px;
+
+  font-size:13px;
+}
+
+.member-list{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:16px;
+}
+
+.member{
+
+  padding:12px 24px;
+
+  border-radius:999px;
+
+  cursor:pointer;
+
+  transition:all .35s ease;
+
+  font-size:15px;
+
+  letter-spacing:1px;
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(4px);
+}
+
+/* =========================
+Emerald Circle
+========================= */
+
+.serpents{
+
+  background:
+  linear-gradient(
+    rgba(20,40,25,0.35),
+    rgba(0,0,0,0.25)
+  );
+}
+
+.serpents h2{
+
+  color:#8fc49c;
+}
+
+.serpents .group-header p{
+
+  color:#6ea57d;
+}
+
+.serpents .member{
+
+  background:
+  rgba(40,70,50,0.45);
+
+  color:#d9f2df;
+}
+
+.serpents .member:hover{
+
+  transform:
+  translateY(-4px);
+
+  box-shadow:
+  0 0 12px rgba(126,185,140,.6),
+  0 0 28px rgba(126,185,140,.3);
+
+  border-color:#7db98c;
+}
+
+/* =========================
+Crimson Assembly
+========================= */
+
+.lions{
+
+  background:
+  linear-gradient(
+    rgba(70,25,25,0.35),
+    rgba(0,0,0,0.25)
+  );
+}
+
+.lions h2{
+
+  color:#d9897a;
+}
+
+.lions .group-header p{
+
+  color:#d6a36d;
+}
+
+.lions .member{
+
+  background:
+  rgba(90,40,40,0.45);
+
+  color:#ffe3d8;
+}
+
+.lions .member:hover{
+
+  transform:
+  translateY(-4px);
+
+  box-shadow:
+  0 0 12px rgba(217,138,114,.6),
+  0 0 28px rgba(217,138,114,.3);
+
+  border-color:#d9897a;
+}
+
+/* =========================
+Sapphire Archive
+========================= */
+
+.eagles{
+
+  background:
+  linear-gradient(
+    rgba(20,35,70,0.35),
+    rgba(0,0,0,0.25)
+  );
+}
+
+.eagles h2{
+
+  color:#8aa9dc;
+}
+
+.eagles .group-header p{
+
+  color:#b58d5c;
+}
+
+.eagles .member{
+
+  background:
+  rgba(40,60,105,0.45);
+
+  color:#dbe6ff;
+}
+
+.eagles .member:hover{
+
+  transform:
+  translateY(-4px);
+
+  box-shadow:
+  0 0 12px rgba(138,169,220,.6),
+  0 0 28px rgba(138,169,220,.3);
+
+  border-color:#8aa9dc;
+}
+
+/* =========================
+Golden Hearth
+========================= */
+
+.badgers{
+
+  background:
+  linear-gradient(
+    rgba(85,70,20,0.35),
+    rgba(0,0,0,0.25)
+  );
+}
+
+.badgers h2{
+
+  color:#e4c96b;
+}
+
+.badgers .group-header p{
+
+  color:#f2d87d;
+}
+
+.badgers .member{
+
+  background:
+  rgba(110,90,30,0.45);
+
+  color:#fff2bc;
+}
+
+.badgers .member:hover{
+
+  transform:
+  translateY(-4px);
+
+  box-shadow:
+  0 0 12px rgba(228,201,107,.6),
+  0 0 28px rgba(228,201,107,.3);
+
+  border-color:#e4c96b;
+}
+
+/* =========================
+手機版
+========================= */
+
+@media (max-width:1000px){
+
+  .page{
+
+    flex-direction:column;
+  }
+
+  .sidebar{
+
+    width:100%;
+
+    min-height:auto;
+
+    border-right:none;
+
+    border-bottom:
+    1px solid rgba(184,148,92,0.2);
+  }
+
+  nav{
+
+    flex-direction:row;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+  }
+
+  .content{
+
+    padding:40px 25px;
+  }
+
+  .group-header{
+
+    flex-direction:column;
+
+    text-align:center;
+  }
+
+  .member-list{
+
+    justify-content:center;
+  }
+
+}

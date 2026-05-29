@@ -208,20 +208,17 @@ Founder 區塊
 }
 .name-badge{
 
-  width:18px;
+  width:24px;
 
-  margin-left:6px;
+  margin-left:8px;
 
-  vertical-align:-2px;
+  vertical-align:middle;
 
-  opacity:0.9;
+  opacity:0.95;
 
   filter:
-
-  drop-shadow(0 0 8px rgba(184,148,92,0.35));
-
+  drop-shadow(0 0 6px rgba(184,148,92,0.25));
 }
-
 
 .founder-text span{
 

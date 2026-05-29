@@ -198,15 +198,42 @@ h1{
   drop-shadow(0 0 18px rgba(255,255,255,0.12));
 }
 
-.group-header h2{
+.group-badge{
 
-  margin:0;
+  width:78px;
 
-  font-family:"Cinzel", serif;
+  object-fit:contain;
 
-  font-size:32px;
+  filter:
+  drop-shadow(0 0 18px rgba(255,255,255,0.12));
+}
 
-  letter-spacing:2px;
+/* 蛇 */
+
+.snake-badge{
+
+  transform:scale(1.08);
+}
+
+/* 獅 */
+
+.lion-badge{
+
+  transform:scale(0.88);
+}
+
+/* 鷹 */
+
+.eagle-badge{
+
+  transform:scale(1);
+}
+
+/* 獾 */
+
+.badger-badge{
+
+  transform:scale(0.95);
 }
 
 .group-header p{

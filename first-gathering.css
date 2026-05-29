@@ -29,7 +29,9 @@ body{
   display:flex;
 }
 
-/* Sidebar */
+/* =========================
+左側欄位
+========================= */
 
 .sidebar{
 
@@ -101,7 +103,9 @@ nav a:hover{
   0 0 16px rgba(184,148,92,0.4);
 }
 
-/* Content */
+/* =========================
+右側內容
+========================= */
 
 .content{
 
@@ -113,6 +117,8 @@ nav a:hover{
 }
 
 .gathering-section{
+
+  width:100%;
 
   max-width:1400px;
 
@@ -156,8 +162,14 @@ h1{
 
   font-family:"Cinzel", serif;
 
+  font-size:14px;
+
   letter-spacing:4px;
 }
+
+/* =========================
+主圖
+========================= */
 
 .hero-photo{
 
@@ -179,7 +191,132 @@ h1{
   0 0 50px rgba(0,0,0,0.45);
 }
 
-/* 手機版 */
+/* =========================
+照片牆
+========================= */
+
+.photo-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(4,1fr);
+
+  gap:22px;
+
+  margin-top:20px;
+}
+
+.photo-grid img{
+
+  width:100%;
+
+  aspect-ratio:1/1;
+
+  object-fit:cover;
+
+  border-radius:18px;
+
+  border:
+  1px solid rgba(184,148,92,0.18);
+
+  transition:.35s ease;
+
+  box-shadow:
+  0 0 24px rgba(0,0,0,0.25);
+
+  cursor:pointer;
+}
+
+.photo-grid img:hover{
+
+  transform:
+  translateY(-6px);
+
+  box-shadow:
+  0 0 24px rgba(184,148,92,.25),
+  0 0 40px rgba(184,148,92,.15);
+}
+
+/* =========================
+參與巫師
+========================= */
+
+.attendees-box{
+
+  margin-top:90px;
+
+  padding:42px;
+
+  border-radius:24px;
+
+  border:
+  1px solid rgba(184,148,92,0.22);
+
+  background:
+  rgba(0,0,0,0.42);
+
+  backdrop-filter:blur(8px);
+
+  box-shadow:
+  0 0 40px rgba(0,0,0,0.35);
+}
+
+.attendees-box h2{
+
+  margin:0 0 32px;
+
+  color:#d8c39a;
+
+  font-family:"Cinzel", serif;
+
+  font-size:30px;
+
+  letter-spacing:3px;
+}
+
+.attendee-list{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:14px;
+}
+
+.attendee-list span{
+
+  padding:10px 20px;
+
+  border-radius:999px;
+
+  color:#b8945c;
+
+  background:
+  rgba(20,15,10,0.65);
+
+  border:
+  1px solid rgba(184,148,92,0.26);
+
+  transition:.3s;
+
+  cursor:default;
+}
+
+.attendee-list span:hover{
+
+  color:#f0d08a;
+
+  transform:
+  translateY(-3px);
+
+  box-shadow:
+  0 0 18px rgba(184,148,92,0.28);
+}
+
+/* =========================
+手機版
+========================= */
 
 @media (max-width:1000px){
 
@@ -217,6 +354,17 @@ h1{
   h1{
 
     font-size:40px;
+  }
+
+  .photo-grid{
+
+    grid-template-columns:
+    repeat(2,1fr);
+  }
+
+  .attendee-list{
+
+    justify-content:center;
   }
 
 }

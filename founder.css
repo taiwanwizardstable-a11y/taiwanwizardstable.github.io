@@ -195,7 +195,7 @@ Founder 區塊
 }
 
 .founder-text h2{
-
+  
   margin:0;
 
   color:#d8c39a;
@@ -205,18 +205,19 @@ Founder 區塊
   font-size:38px;
 
   letter-spacing:3px;
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:8px;
 }
 .name-badge{
-
   height:1.2em;
-
-  width:auto;
-
   margin-left:8px;
-
   vertical-align:-0.1em;
-
-  opacity:0.95;
 }
 
 .founder-text span{

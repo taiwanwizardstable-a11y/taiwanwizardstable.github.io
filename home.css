@@ -202,3 +202,59 @@ h1{
 
   object-fit:cover;
 }
+@media(max-width:768px){
+
+  .page{
+
+    flex-direction:column;
+  }
+
+  .sidebar{
+
+    width:100%;
+
+    min-height:auto;
+
+    border-right:none;
+
+    border-bottom:
+    1px solid rgba(184,148,92,0.2);
+
+    padding:30px 24px;
+  }
+
+  nav{
+
+    gap:12px;
+  }
+
+  nav a{
+
+    font-size:13px;
+
+    letter-spacing:3px;
+  }
+
+  .content{
+
+    padding:50px 28px;
+  }
+
+  .content section{
+
+    max-width:100%;
+  }
+
+  .intro{
+
+    font-size:14px;
+
+    line-height:2.2;
+  }
+
+  .intro-image{
+
+    width:90%;
+  }
+
+}

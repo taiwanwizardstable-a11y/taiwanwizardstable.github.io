@@ -206,20 +206,16 @@ Founder 區塊
 
   letter-spacing:3px;
 }
-..name-badge{
+.name-badge{
 
-  width:32px;
+  height:1em;
 
-  margin-left:8px;
+  width:auto;
 
-  vertical-align:-5px;
+  margin-left:6px;
 
-  opacity:0.95;
-
-  filter:
-  drop-shadow(0 0 6px rgba(184,148,92,0.25));
+  vertical-align:-0.1em;
 }
-
 .founder-text span{
 
   display:block;

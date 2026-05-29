@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Founder | Taiwan Wizard's Table</title>
+
+  <link rel="stylesheet" href="founder.css">
+
+</head>
+
+<body>
+
+<div class="page">
+
+  <aside class="sidebar">
+
+    <a href="index.html">
+
+      <img 
+        class="logo" 
+        src="https://i.ibb.co/DDqZVRrd/A6-FD1-A22-C056-4815-A460-02-B004988-C34.png"
+      >
+
+    </a>
+
+    <nav>
+
+      <a href="founder.html">Founder</a>
+
+      <a href="members.html">Members</a>
+
+      <a href="gatherings.html">Gatherings</a>
+
+      <a href="calendar.html">Calendar</a>
+
+      <a href="joinus.html">Join Us</a>
+
+    </nav>
+
+  </aside>
+
+  <main class="content">
+
+    <section class="founder-section">
+
+      <p class="small-title">
+        Taiwan Wizard's Table
+      </p>
+
+      <h1>
+        Founder
+      </h1>
+
+      <div class="founder-layout">
+
+        <img 
+          class="founder-image"
+          src="https://i.ibb.co/gZgWYTs4/B6-AEF9-E2-2561-4354-85-BF-D9517-F6-FFD79.png"
+        >
+
+        <div class="founder-text">
+
+          <h2>
+            Rota Sliver
+          </h2>
+
+          <span>
+            Founder of <br><br>
+            Taiwan Wizard's Table
+          </span>
+
+          <p class="description">
+
+            Taiwan Wizard's Table 的起點，
+            並非來自某個宏大的計畫，
+            而是一個始終存在於珞塔心中的信念。<br><br>
+
+            珞塔始終相信，
+            在這個廣闊而忙碌的世界裡，
+            一定還有許多與她一樣，
+            深深熱愛著魔法世界的人存在。<br><br>
+
+            於是她決定，
+            親手開啟這間交誼廳的門。<br><br>
+
+            而命運也像真的施下了某種魔法般，
+            讓一位又一位巫師夥伴來到這裡。<br><br>
+
+            我們來自不同城市，
+            擁有不同的人生與故事，
+            卻因相同的熱愛而相遇。<br><br>
+
+            也正因如此，
+            才有了如今這間溫暖而明亮的交誼廳。
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
+
+</body>
+
+</html>

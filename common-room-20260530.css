@@ -1,0 +1,226 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    color:#f5f5f5;
+    font-family:"Noto Serif TC", serif;
+
+    background-image:
+    linear-gradient(
+    rgba(0,0,0,.55),
+    rgba(0,0,0,.88)
+    ),
+    url("IMG_0580.png");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+.container{
+    width:min(900px,92%);
+    margin:80px auto;
+}
+
+.entry-card{
+    background:rgba(0,0,0,.48);
+    border:1px solid rgba(212,175,55,.38);
+    border-radius:28px;
+    padding:42px;
+    backdrop-filter:blur(4px);
+    box-shadow:0 0 35px rgba(0,0,0,.45);
+}
+
+.date{
+    text-align:center;
+    font-family:"Cinzel", serif;
+    font-size:2.5rem;
+    letter-spacing:.08em;
+    color:#d4af37;
+    margin-bottom:40px;
+}
+
+.photo{
+    width:100%;
+    overflow:hidden;
+    border-radius:22px;
+    border:1px solid rgba(212,175,55,.4);
+    margin-bottom:42px;
+    box-shadow:0 18px 40px rgba(0,0,0,.45);
+}
+
+.photo img{
+    width:100%;
+    display:block;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:16px;
+
+    font-family:"Cinzel", serif;
+    font-size:.95rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+
+    color:#d4af37;
+}
+
+.people{
+    text-align:center;
+    margin-bottom:36px;
+}
+
+.people span{
+    display:inline-block;
+    margin:6px;
+    padding:8px 16px;
+    border-radius:999px;
+    font-size:.95rem;
+    font-weight:500;
+}
+
+.ravenclaw{
+    color:#c7dcff;
+    background:rgba(22,44,76,.58);
+    border:1px solid rgba(84,136,212,.6);
+}
+
+.hufflepuff{
+    color:#ffe7a8;
+    background:rgba(90,73,20,.58);
+    border:1px solid rgba(212,175,55,.6);
+}
+
+.gryffindor{
+    color:#ffc1b3;
+    background:rgba(95,22,22,.58);
+    border:1px solid rgba(180,65,65,.6);
+}
+
+.slytherin{
+    color:#b8ffd4;
+    background:rgba(16,60,40,.58);
+    border:1px solid rgba(60,180,120,.6);
+}
+
+.reel-section{
+    text-align:center;
+    margin-top:10px;
+}
+
+.reel-button{
+    display:inline-block;
+    padding:14px 34px;
+    border-radius:999px;
+
+    text-decoration:none;
+    color:#d4af37;
+    border:1px solid rgba(212,175,55,.7);
+
+    font-family:"Cinzel", serif;
+    letter-spacing:.08em;
+
+    transition:.3s ease;
+}
+
+.reel-button:hover{
+    background:rgba(212,175,55,.14);
+    transform:translateY(-2px);
+}
+
+.back-link{
+    text-align:center;
+    margin-top:42px;
+}
+
+.back-link a{
+    text-decoration:none;
+    color:#cfcfcf;
+    transition:.3s ease;
+}
+
+.back-link a:hover{
+    color:#d4af37;
+}
+
+/* 手機版 */
+
+@media (max-width:768px){
+
+    body{
+        background-attachment:scroll;
+    }
+
+    .container{
+        width:92%;
+        margin:36px auto;
+    }
+
+    .entry-card{
+        padding:24px 18px;
+        border-radius:22px;
+    }
+
+    .date{
+        font-size:1.75rem;
+        margin-bottom:28px;
+    }
+
+    .photo{
+        border-radius:18px;
+        margin-bottom:32px;
+    }
+
+    .section-title{
+        font-size:.82rem;
+        letter-spacing:.15em;
+    }
+
+    .people{
+        margin-bottom:30px;
+    }
+
+    .people span{
+        display:block;
+        width:max-content;
+        max-width:100%;
+        margin:8px auto;
+        padding:8px 15px;
+        font-size:.92rem;
+    }
+
+    .reel-button{
+        padding:13px 28px;
+        font-size:.9rem;
+    }
+
+    .back-link{
+        margin-top:34px;
+        font-size:.92rem;
+    }
+}
+
+@media (max-width:420px){
+
+    .container{
+        width:94%;
+        margin:28px auto;
+    }
+
+    .entry-card{
+        padding:22px 14px;
+    }
+
+    .date{
+        font-size:1.45rem;
+    }
+
+    .people span{
+        font-size:.88rem;
+    }
+}

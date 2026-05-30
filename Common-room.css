@@ -160,7 +160,7 @@ h1{
 
   color:#b8945c;
 
-  line-height:2.3;
+  line-height:2.4;
 
   letter-spacing:1px;
 
@@ -317,6 +317,17 @@ Timeline
 .timeline-item:hover .view-link{
 
   color:#f0d08a;
+}
+
+/* =========================
+Image Protection
+========================= */
+
+img{
+
+  -webkit-user-drag:none;
+
+  user-select:none;
 }
 
 /* =========================

@@ -1,173 +1,393 @@
-<!DOCTYPE html>
+@charset "UTF-8";
 
-<html lang="zh-Hant">
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Noto+Serif+TC:wght@300;400;600&display=swap');
 
-<head>
+*{
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
 
-  <meta charset="UTF-8">
+body{
+  margin:0;
+  background:#050505;
+  color:white;
+  font-family:"Noto Serif TC", serif;
+}
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+.page{
 
-  <title>Memories | Taiwan Wizard's Table</title>
+  min-height:100vh;
 
-  <link rel="stylesheet" href="memories.css">
+  background-image:
+  linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.88)),
+  url("IMG_0580.png");
 
-</head>
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
 
-<body>
+  display:flex;
+}
 
-<div class="page">
+/* =========================
+Sidebar
+========================= */
 
-  <aside class="sidebar">
+.sidebar{
 
-    <a href="home.html">
+  width:280px;
 
-      <img
-        class="logo"
-        src="A6-FD1-A22-C056-4815-A460-02-B004988-C34.png"
-      >
+  min-height:100vh;
 
-    </a>
+  padding:50px 28px;
 
-    <nav>
+  border-right:
+  1px solid rgba(184,148,92,0.2);
 
-      <a href="founder.html">Founder</a>
+  background:rgba(0,0,0,0.45);
 
-      <a href="members.html">Members</a>
+  backdrop-filter:blur(8px);
 
-      <a href="gatherings.html">Gatherings</a>
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
 
-      <a href="memories.html">Memories</a>
+.logo{
 
-      <a href="calendar.html">Calendar</a>
+  width:160px;
 
-      <a href="joinus.html">Join Us</a>
+  margin-bottom:60px;
 
-    </nav>
+  filter:
+  drop-shadow(0 0 12px rgba(184,148,92,0.3));
+}
 
-  </aside>
+nav{
 
-  <main class="content">
+  width:100%;
 
-    <section class="memories-section">
+  display:flex;
+  flex-direction:column;
 
-      <p class="small-title">
-        Taiwan Wizard's Table
-      </p>
+  gap:22px;
+}
 
-      <h1>
-        Memories
-      </h1>
+nav a{
 
-      <p class="memories-intro">
+  color:#b8945c;
 
-        有些魔法並不發生在正式聚會裡。<br>
+  text-decoration:none;
 
-        它們藏在某次臨時約好的晚餐、深夜的歌聲、
-        遊戲中的歡笑，或是一段只屬於少數人的午後時光。<br><br>
+  font-family:"Cinzel", serif;
 
-        這裡記錄著交誼廳一路走來的每一段回憶。
+  font-size:14px;
 
-      </p>
+  letter-spacing:4px;
 
-      <div class="timeline">
+  padding:14px 12px;
 
-        <a href="memory-001.html" class="timeline-item">
+  border-bottom:
+  1px solid rgba(184,148,92,0.18);
 
-          <div class="timeline-date">
-            2026.05.30
-          </div>
+  transition:0.3s;
+}
 
-          <div class="timeline-content">
+nav a:hover{
 
-            <h2>
-              First Memory
-            </h2>
+  color:#e1bf87;
 
-            <p>
-              第一段被收藏進交誼廳的回憶。
-            </p>
+  padding-left:22px;
 
-            <span class="view-link">
-              View Memory →
-            </span>
+  text-shadow:
+  0 0 16px rgba(184,148,92,0.4);
+}
 
-          </div>
+/* =========================
+Content
+========================= */
 
-        </a>
+.content{
 
-        <a href="memory-002.html" class="timeline-item">
+  flex:1;
 
-          <div class="timeline-date">
-            2026.06.12
-          </div>
+  min-height:100vh;
 
-          <div class="timeline-content">
+  padding:80px;
+}
 
-            <h2>
-              Second Memory
-            </h2>
+.memories-section{
 
-            <p>
-              第二段被記錄下來的故事。
-            </p>
+  width:100%;
 
-            <span class="view-link">
-              View Memory →
-            </span>
+  max-width:1000px;
 
-          </div>
+  margin:auto;
+}
 
-        </a>
+.small-title{
 
-        <a href="memory-003.html" class="timeline-item">
+  color:rgba(184,148,92,0.7);
 
-          <div class="timeline-date">
-            Coming Soon
-          </div>
+  font-family:"Cinzel", serif;
 
-          <div class="timeline-content">
+  font-size:13px;
 
-            <h2>
-              Future Memory
-            </h2>
+  letter-spacing:6px;
 
-            <p>
-              等待下一段魔法發生。
-            </p>
+  text-transform:uppercase;
+}
 
-            <span class="view-link">
-              View Memory →
-            </span>
+h1{
 
-          </div>
+  margin:18px 0;
 
-        </a>
+  color:#d8c39a;
 
-      </div>
+  font-family:"Cinzel", serif;
 
-    </section>
+  font-size:52px;
 
-  </main>
+  letter-spacing:4px;
 
-</div>
+  text-shadow:
+  0 0 18px rgba(0,0,0,0.9);
+}
 
-<script>
+.memories-intro{
 
-document.addEventListener("contextmenu", function(e){
+  color:#b8945c;
 
-  e.preventDefault();
+  line-height:2.4;
 
-});
+  letter-spacing:1px;
 
-document.addEventListener("dragstart", function(e){
+  font-size:15px;
 
-  e.preventDefault();
+  margin-bottom:80px;
+}
 
-});
+/* =========================
+Timeline
+========================= */
 
-</script>
+.timeline{
 
-</body>
+  position:relative;
 
-</html>
+  padding-left:60px;
+
+  margin-top:60px;
+}
+
+.timeline::before{
+
+  content:"";
+
+  position:absolute;
+
+  left:15px;
+
+  top:0;
+
+  bottom:0;
+
+  width:1px;
+
+  background:
+  linear-gradient(
+    to bottom,
+    rgba(184,148,92,0),
+    rgba(184,148,92,.8),
+    rgba(184,148,92,0)
+  );
+}
+
+.timeline-item{
+
+  position:relative;
+
+  display:block;
+
+  text-decoration:none;
+
+  margin-bottom:70px;
+}
+
+.timeline-item::before{
+
+  content:"";
+
+  position:absolute;
+
+  left:-52px;
+
+  top:10px;
+
+  width:18px;
+
+  height:18px;
+
+  border-radius:50%;
+
+  background:#b8945c;
+
+  box-shadow:
+  0 0 12px rgba(184,148,92,.8),
+  0 0 30px rgba(184,148,92,.4);
+}
+
+.timeline-date{
+
+  color:#b8945c;
+
+  font-family:"Cinzel", serif;
+
+  letter-spacing:4px;
+
+  font-size:13px;
+
+  margin-bottom:15px;
+}
+
+.timeline-content{
+
+  padding:34px;
+
+  border-radius:24px;
+
+  background:rgba(0,0,0,.45);
+
+  border:
+  1px solid rgba(184,148,92,.2);
+
+  backdrop-filter:blur(8px);
+
+  transition:.35s ease;
+}
+
+.timeline-content h2{
+
+  margin:0 0 18px;
+
+  color:#d8c39a;
+
+  font-family:"Cinzel", serif;
+
+  font-size:30px;
+
+  letter-spacing:2px;
+}
+
+.timeline-content p{
+
+  margin:0;
+
+  color:rgba(255,255,255,.72);
+
+  line-height:2;
+}
+
+.view-link{
+
+  display:inline-block;
+
+  margin-top:24px;
+
+  color:#b8945c;
+
+  font-family:"Cinzel", serif;
+
+  letter-spacing:3px;
+}
+
+.timeline-item:hover .timeline-content{
+
+  transform:translateY(-5px);
+
+  border-color:
+  rgba(216,195,154,.5);
+
+  box-shadow:
+  0 0 28px rgba(184,148,92,.25);
+}
+
+.timeline-item:hover .view-link{
+
+  color:#f0d08a;
+}
+
+/* =========================
+圖片保護
+========================= */
+
+img{
+
+  -webkit-user-drag:none;
+
+  user-select:none;
+}
+
+/* =========================
+手機版
+========================= */
+
+@media (max-width:1000px){
+
+  .page{
+
+    flex-direction:column;
+  }
+
+  .sidebar{
+
+    width:100%;
+
+    min-height:auto;
+
+    border-right:none;
+
+    border-bottom:
+    1px solid rgba(184,148,92,0.2);
+  }
+
+  nav{
+
+    flex-direction:row;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+  }
+
+  .content{
+
+    padding:40px 24px;
+  }
+
+  h1{
+
+    font-size:40px;
+  }
+
+  .timeline{
+
+    padding-left:40px;
+  }
+
+  .timeline-item::before{
+
+    left:-35px;
+  }
+
+  .timeline-content{
+
+    padding:24px;
+  }
+
+  .timeline-content h2{
+
+    font-size:24px;
+  }
+
+}

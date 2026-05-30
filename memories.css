@@ -1,292 +1,173 @@
-@charset "UTF-8";
+<!DOCTYPE html>
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Noto+Serif+TC:wght@300;400;600&display=swap');
+<html lang="zh-Hant">
 
-*{
-  box-sizing:border-box;
-  scroll-behavior:smooth;
-}
+<head>
 
-body{
-  margin:0;
-  background:#050505;
-  color:white;
-  font-family:"Noto Serif TC", serif;
-}
+  <meta charset="UTF-8">
 
-.page{
-  min-height:100vh;
-  background-image:
-  linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.88)),
-  url("IMG_0580.png");
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-  display:flex;
-}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-.sidebar{
-  width:280px;
-  min-height:100vh;
-  padding:50px 28px;
-  border-right:1px solid rgba(184,148,92,0.2);
-  background:rgba(0,0,0,0.45);
-  backdrop-filter:blur(8px);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-}
+  <title>Memories | Taiwan Wizard's Table</title>
 
-.logo{
-  width:160px;
-  margin-bottom:60px;
-  filter:drop-shadow(0 0 12px rgba(184,148,92,0.3));
-}
+  <link rel="stylesheet" href="memories.css">
 
-nav{
-  width:100%;
-  display:flex;
-  flex-direction:column;
-  gap:22px;
-}
+</head>
 
-nav a{
-  color:#b8945c;
-  text-decoration:none;
-  font-family:"Cinzel", serif;
-  font-size:14px;
-  letter-spacing:4px;
-  padding:14px 12px;
-  border-bottom:1px solid rgba(184,148,92,0.18);
-  transition:0.3s;
-}
+<body>
 
-nav a:hover{
-  color:#e1bf87;
-  padding-left:22px;
-  text-shadow:0 0 16px rgba(184,148,92,0.4);
-}
+<div class="page">
 
-.content{
-  flex:1;
-  min-height:100vh;
-  padding:80px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
+  <aside class="sidebar">
 
-.gatherings-section{
-  width:100%;
-  max-width:1100px;
-}
+    <a href="home.html">
 
-.small-title{
-  color:rgba(184,148,92,0.7);
-  font-family:"Cinzel", serif;
-  font-size:13px;
-  letter-spacing:6px;
-  text-transform:uppercase;
-}
+      <img
+        class="logo"
+        src="A6-FD1-A22-C056-4815-A460-02-B004988-C34.png"
+      >
 
-h1{
-  margin:18px 0 30px;
-  color:#d8c39a;
-  font-family:"Cinzel", serif;
-  font-size:56px;
-  letter-spacing:4px;
-  text-shadow:0 0 18px rgba(0,0,0,0.9);
-}
+    </a>
 
-.intro{
-  color:#b8945c;
-  line-height:2.4;
-  letter-spacing:1px;
-  font-size:15px;
-  margin-bottom:70px;
-}
+    <nav>
 
-.gathering-grid{
-  display:grid;
-  grid-template-columns:repeat(2, 1fr);
-  gap:34px;
-}
+      <a href="founder.html">Founder</a>
 
-.gathering-card{
-  min-height:330px;
-  padding:42px;
-  border-radius:24px;
-  text-decoration:none;
-  background:rgba(0,0,0,0.42);
-  border:1px solid rgba(184,148,92,0.24);
-  backdrop-filter:blur(8px);
-  box-shadow:0 0 38px rgba(0,0,0,0.42);
-  transition:0.35s ease;
-  position:relative;
-  overflow:hidden;
-}
+      <a href="members.html">Members</a>
 
-.gathering-card:before{
-  content:"";
-  position:absolute;
-  inset:0;
-  opacity:0;
-  transition:0.35s ease;
-  pointer-events:none;
-}
+      <a href="gatherings.html">Gatherings</a>
 
-.gathering-card:hover{
-  transform:translateY(-6px);
-  border-color:rgba(216,195,154,0.5);
-}
+      <a href="memories.html">Memories</a>
 
-.gathering-card:hover:before{
-  opacity:1;
-}
+      <a href="calendar.html">Calendar</a>
 
-.gathering-card.first:before{
-  background:radial-gradient(circle at top left, rgba(184,148,92,0.2), transparent 55%);
-}
+      <a href="joinus.html">Join Us</a>
 
-.gathering-card.second:before{
-  background:radial-gradient(circle at top left, rgba(120,150,190,0.18), transparent 55%);
-}
+    </nav>
 
-.gathering-number{
-  color:#b8945c;
-  font-family:"Cinzel", serif;
-  font-size:13px;
-  letter-spacing:4px;
-  text-transform:uppercase;
-}
+  </aside>
 
-.gathering-card h2{
-  margin:30px 0 24px;
-  color:#d8c39a;
-  font-family:"Cinzel", serif;
-  font-size:34px;
-  letter-spacing:2px;
-  line-height:1.35;
-}
+  <main class="content">
 
-.gathering-card p{
-  color:rgba(255,255,255,0.72);
-  line-height:2;
-  letter-spacing:1px;
-  font-size:15px;
-}
+    <section class="memories-section">
 
-.date{
-  margin-top:36px;
-  color:#b8945c;
-  font-family:"Cinzel", serif;
-  letter-spacing:3px;
-  font-size:14px;
-}
+      <p class="small-title">
+        Taiwan Wizard's Table
+      </p>
 
-/* 手機版 */
+      <h1>
+        Memories
+      </h1>
 
-@media (max-width:1000px){
+      <p class="memories-intro">
 
-  .page{
-    flex-direction:column;
-  }
+        有些魔法並不發生在正式聚會裡。<br>
 
-  .sidebar{
-    width:100%;
-    min-height:auto;
-    padding:32px 24px;
-    border-right:none;
-    border-bottom:1px solid rgba(184,148,92,0.2);
-  }
+        它們藏在某次臨時約好的晚餐、深夜的歌聲、
+        遊戲中的歡笑，或是一段只屬於少數人的午後時光。<br><br>
 
-  nav{
-    flex-direction:row;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:12px;
-  }
+        這裡記錄著交誼廳一路走來的每一段回憶。
 
-  nav a{
-    font-size:12px;
-    padding:10px;
-  }
+      </p>
 
-  .content{
-    padding:50px 24px;
-  }
+      <div class="timeline">
 
-  .gathering-grid{
-    grid-template-columns:1fr;
-  }
+        <a href="memory-001.html" class="timeline-item">
 
-  h1{
-    font-size:42px;
-  }
-.memories-section{
-  width:100%;
-  max-width:1100px;
-  margin:auto;
-}
+          <div class="timeline-date">
+            2026.05.30
+          </div>
 
-.memories-intro{
-  color:#b8945c;
-  line-height:2.4;
-  letter-spacing:1px;
-  font-size:15px;
-  margin-bottom:70px;
-}
+          <div class="timeline-content">
 
-.memory-grid{
-  display:grid;
-  grid-template-columns:repeat(2, 1fr);
-  gap:34px;
-}
+            <h2>
+              First Memory
+            </h2>
 
-.memory-card{
-  min-height:260px;
-  padding:38px;
-  border-radius:24px;
-  text-decoration:none;
-  background:rgba(0,0,0,0.42);
-  border:1px solid rgba(184,148,92,0.24);
-  backdrop-filter:blur(8px);
-  box-shadow:0 0 38px rgba(0,0,0,0.42);
-  transition:.35s ease;
-}
+            <p>
+              第一段被收藏進交誼廳的回憶。
+            </p>
 
-.memory-card:hover{
-  transform:translateY(-6px);
-  border-color:rgba(216,195,154,0.5);
-  box-shadow:0 0 28px rgba(184,148,92,0.22);
-}
+            <span class="view-link">
+              View Memory →
+            </span>
 
-.memory-card span{
-  color:#b8945c;
-  font-family:"Cinzel", serif;
-  font-size:13px;
-  letter-spacing:4px;
-  text-transform:uppercase;
-}
+          </div>
 
-.memory-card h2{
-  color:#d8c39a;
-  font-family:"Cinzel", serif;
-  font-size:30px;
-  letter-spacing:2px;
-  margin:28px 0 20px;
-}
+        </a>
 
-.memory-card p{
-  color:rgba(255,255,255,0.72);
-  line-height:2;
-}
+        <a href="memory-002.html" class="timeline-item">
 
-@media (max-width:1000px){
+          <div class="timeline-date">
+            2026.06.12
+          </div>
 
-  .memory-grid{
-    grid-template-columns:1fr;
-  }
+          <div class="timeline-content">
 
-}
-}
+            <h2>
+              Second Memory
+            </h2>
+
+            <p>
+              第二段被記錄下來的故事。
+            </p>
+
+            <span class="view-link">
+              View Memory →
+            </span>
+
+          </div>
+
+        </a>
+
+        <a href="memory-003.html" class="timeline-item">
+
+          <div class="timeline-date">
+            Coming Soon
+          </div>
+
+          <div class="timeline-content">
+
+            <h2>
+              Future Memory
+            </h2>
+
+            <p>
+              等待下一段魔法發生。
+            </p>
+
+            <span class="view-link">
+              View Memory →
+            </span>
+
+          </div>
+
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
+
+<script>
+
+document.addEventListener("contextmenu", function(e){
+
+  e.preventDefault();
+
+});
+
+document.addEventListener("dragstart", function(e){
+
+  e.preventDefault();
+
+});
+
+</script>
+
+</body>
+
+</html>

@@ -500,7 +500,7 @@ Animation
   }
 
   .content{
-    padding:46px 26px 70px;
+    padding:46px 20px 70px;
   }
 
   .tracks-section{
@@ -543,11 +543,11 @@ Animation
     font-size:12px;
   }
 
+  /* 地圖本身 */
+
   .map-wrapper{
-    padding:14px;
-
+    padding:0;
     border-radius:22px;
-
     overflow:visible;
   }
 
@@ -555,37 +555,14 @@ Animation
     border-radius:16px;
   }
 
-  .pin-label{
-    min-width:118px;
+  /* 只縮小文字 */
 
-    left:18px;
+  .pin-label{
+    min-width:110px;
 
     font-size:10px;
 
     letter-spacing:1px;
-  }
-
-  .major-pin{
-    width:22px;
-    height:22px;
-
-    font-size:22px;
-
-    line-height:22px;
-  }
-
-  .recorded-pin{
-    width:13px;
-    height:13px;
-  }
-
-  .unexplored-pin{
-    width:18px;
-    height:18px;
-
-    font-size:18px;
-
-    line-height:18px;
   }
 
 }
@@ -593,7 +570,7 @@ Animation
 @media (max-width:480px){
 
   .content{
-    padding:40px 18px 64px;
+    padding:40px 14px 64px;
   }
 
   h1{
@@ -610,18 +587,8 @@ Animation
     align-items:flex-start;
   }
 
-  .map-wrapper{
-    padding:10px;
-  }
-
   .pin-label{
-    left:14px;
-
-    top:-10px;
-
-    min-width:105px;
-
-    padding:6px 9px;
+    min-width:95px;
 
     font-size:9px;
   }

@@ -222,13 +222,7 @@ Legend
   0 0 24px rgba(184,148,92,0.55);
 }
 
-.legend-mark{
-  color:rgba(210,210,210,0.38);
 
-  font-size:18px;
-
-  line-height:1;
-}
 
 /* =========================
 Map
@@ -357,26 +351,9 @@ Map Pins
   animation:pulse 2.6s infinite;
 }
 
-.unexplored-pin{
-  width:22px;
-  height:22px;
 
-  color:rgba(230,230,230,0.32);
 
-  font-size:22px;
 
-  line-height:22px;
-
-  text-align:center;
-}
-
-.unexplored-pin::before{
-  content:"✧";
-}
-
-.unexplored-pin:hover{
-  color:rgba(216,195,154,0.65);
-}
 
 /* =========================
 Pin Label
@@ -445,110 +422,13 @@ Pin Label
 }
 
 .tainan-gathering-01{
-  top:60%;
+  top:50%;
   left:30%;
 }
 
 /* 未探索地區 */
 
-.keelung{
-  top:13%;
-  left:74%;
-}
 
-.new-taipei{
-  top:17%;
-  left:70%;
-}
-
-.taoyuan{
-  top:24%;
-  left:61%;
-}
-
-.hsinchu-city{
-  top:29%;
-  left:56%;
-}
-
-.hsinchu-county{
-  top:32%;
-  left:53%;
-}
-
-.yilan{
-  top:25%;
-  left:76%;
-}
-
-.miaoli{
-  top:37%;
-  left:51%;
-}
-
-.taichung{
-  top:44%;
-  left:49%;
-}
-
-.changhua{
-  top:51%;
-  left:41%;
-}
-
-.nantou{
-  top:53%;
-  left:55%;
-}
-
-.yunlin{
-  top:58%;
-  left:40%;
-}
-
-.chiayi-city{
-  top:63%;
-  left:43%;
-}
-
-.chiayi-county{
-  top:65%;
-  left:39%;
-}
-
-.kaohsiung{
-  top:79%;
-  left:47%;
-}
-
-.pingtung{
-  top:88%;
-  left:52%;
-}
-
-.hualien{
-  top:49%;
-  left:73%;
-}
-
-.taitung{
-  top:74%;
-  left:66%;
-}
-
-.penghu{
-  top:67%;
-  left:25%;
-}
-
-.kinmen{
-  top:73%;
-  left:18%;
-}
-
-.lienchiang{
-  top:21%;
-  left:30%;
 }
 
 /* =========================

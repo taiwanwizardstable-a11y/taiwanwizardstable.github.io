@@ -10,16 +10,15 @@ houseCards.forEach(function(card){
 
   const finalScore = Number(card.dataset.score);
   const scoreNumber = card.querySelector(".score-number");
-  const magicSand = card.querySelector(".magic-sand");
+  const gemPile = card.querySelector(".gem-pile");
 
-  const sandHeight = Math.max((finalScore / maxScore) * 88, 8);
+  const gemHeight = Math.max((finalScore / maxScore) * 88, 10);
 
   setTimeout(function(){
-    magicSand.style.height = sandHeight + "%";
+    gemPile.style.height = gemHeight + "%";
   }, 300);
 
   let currentScore = 0;
-
   const step = Math.max(1, Math.ceil(finalScore / 80));
 
   const counter = setInterval(function(){

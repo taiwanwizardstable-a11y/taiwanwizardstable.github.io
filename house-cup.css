@@ -25,9 +25,7 @@ body{
   display:flex;
 }
 
-/* =========================
-左側欄位
-========================= */
+/* 左側欄位 */
 
 .sidebar{
   width:280px;
@@ -71,9 +69,7 @@ nav a:hover{
   text-shadow:0 0 16px rgba(184,148,92,0.4);
 }
 
-/* =========================
-右側內容
-========================= */
+/* 右側內容 */
 
 .content{
   flex:1;
@@ -115,9 +111,7 @@ h1{
   letter-spacing:1px;
 }
 
-/* =========================
-展示區
-========================= */
+/* 展示區 */
 
 .house-cup-case{
   width:100%;
@@ -135,7 +129,7 @@ h1{
 }
 
 .house-card{
-  min-height:500px;
+  min-height:560px;
   padding:26px 16px 28px;
   position:relative;
   overflow:hidden;
@@ -159,41 +153,26 @@ h1{
   pointer-events:none;
 }
 
+/* 固定徽章區，避免下面展示櫃歪掉 */
+
 .house-emblem{
-  width:88px;
-  height:auto;
+  height:110px;
+  width:auto;
   object-fit:contain;
-  margin-bottom:28px;
+  margin-bottom:32px;
   filter:drop-shadow(0 0 16px rgba(216,195,154,0.28));
 }
 
-/* =========================
-個別 Logo 大小與位置
-========================= */
-
-.emblem-crimson{
-  width:170px;
-  transform:translateY(0);
-}
-
-.emblem-emerald{
-  width:200px;
-  transform:translateY(0);
-}
-
-.emblem-sapphire{
-  width:130px;
-  transform:translateY(0);
-}
-
+.emblem-crimson,
+.emblem-emerald,
+.emblem-sapphire,
 .emblem-amber{
-  width:180px;
-  transform:translateY(0);
+  height:110px;
+  width:auto;
+  transform:none;
 }
 
-/* =========================
-玻璃展示櫃
-========================= */
+/* 玻璃展示櫃 */
 
 .gem-display{
   width:150px;
@@ -240,9 +219,7 @@ h1{
   z-index:0;
 }
 
-/* =========================
-純 CSS 寶石堆
-========================= */
+/* 寶石堆 */
 
 .gem-pile{
   position:absolute;
@@ -319,9 +296,7 @@ h1{
   pointer-events:none;
 }
 
-/* =========================
-分數
-========================= */
+/* 分數 */
 
 .score-number{
   margin-top:30px;
@@ -340,9 +315,7 @@ h1{
   letter-spacing:1px;
 }
 
-/* =========================
-四種配色
-========================= */
+/* 四種配色 */
 
 .crimson .gem-pile{
   color:#c83a32;
@@ -388,9 +361,7 @@ h1{
   0 0 26px rgba(0,0,0,0.35);
 }
 
-/* =========================
-動畫
-========================= */
+/* 動畫 */
 
 @keyframes gemBreath{
   0%,100%{
@@ -428,9 +399,7 @@ h1{
   }
 }
 
-/* =========================
-手機版
-========================= */
+/* 手機版 */
 
 @media (max-width:1000px){
 
@@ -444,6 +413,11 @@ h1{
     padding:28px 20px;
     border-right:none;
     border-bottom:1px solid rgba(184,148,92,0.2);
+  }
+
+  .logo{
+    width:130px;
+    margin-bottom:28px;
   }
 
   nav{
@@ -481,7 +455,18 @@ h1{
   }
 
   .house-card{
-    min-height:460px;
+    min-height:520px;
+  }
+
+  .house-emblem{
+    height:100px;
+  }
+
+  .emblem-crimson,
+  .emblem-emerald,
+  .emblem-sapphire,
+  .emblem-amber{
+    height:100px;
   }
 
   .gem-display{

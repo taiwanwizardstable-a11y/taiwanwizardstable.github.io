@@ -161,10 +161,34 @@ h1{
 
 .house-emblem{
   width:88px;
-  height:88px;
+  height:auto;
   object-fit:contain;
   margin-bottom:28px;
   filter:drop-shadow(0 0 16px rgba(216,195,154,0.28));
+}
+
+/* =========================
+個別 Logo 大小與位置
+========================= */
+
+.emblem-crimson{
+  width:110px;
+  transform:translateY(0);
+}
+
+.emblem-emerald{
+  width:140px;
+  transform:translateY(0);
+}
+
+.emblem-sapphire{
+  width:130px;
+  transform:translateY(0);
+}
+
+.emblem-amber{
+  width:120px;
+  transform:translateY(0);
 }
 
 /* =========================

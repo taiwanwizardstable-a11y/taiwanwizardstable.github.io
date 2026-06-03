@@ -16,30 +16,26 @@ body{
 
 .page{
   min-height:100vh;
-
   background-image:
   linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.88)),
   url("IMG_0580.png");
-
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
-
   display:flex;
 }
 
-/* 左側欄位 */
+/* =========================
+左側欄位
+========================= */
 
 .sidebar{
   width:280px;
   min-height:100vh;
   padding:50px 28px;
-
   border-right:1px solid rgba(184,148,92,0.2);
-
   background:rgba(0,0,0,0.45);
   backdrop-filter:blur(8px);
-
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -48,7 +44,6 @@ body{
 .logo{
   width:160px;
   margin-bottom:60px;
-
   filter:drop-shadow(0 0 12px rgba(184,148,92,0.3));
 }
 
@@ -62,35 +57,30 @@ nav{
 nav a{
   color:#b8945c;
   text-decoration:none;
-
   font-family:"Cinzel", serif;
   font-size:14px;
   letter-spacing:4px;
-
   padding:14px 12px;
-
   border-bottom:1px solid rgba(184,148,92,0.18);
-
   transition:0.3s;
 }
 
 nav a:hover{
   color:#e1bf87;
   padding-left:22px;
-
   text-shadow:0 0 16px rgba(184,148,92,0.4);
 }
 
-/* 右側內容 */
+/* =========================
+右側內容
+========================= */
 
 .content{
   flex:1;
   min-height:100vh;
-
   display:flex;
   justify-content:center;
   align-items:center;
-
   padding:80px;
 }
 
@@ -101,7 +91,6 @@ nav a:hover{
 
 .small-title{
   color:rgba(184,148,92,0.7);
-
   font-family:"Cinzel", serif;
   font-size:13px;
   letter-spacing:6px;
@@ -110,44 +99,36 @@ nav a:hover{
 
 h1{
   margin:18px 0 28px;
-
   color:#d8c39a;
-
   font-family:"Cinzel", serif;
   font-size:52px;
   letter-spacing:4px;
-
   text-shadow:0 0 18px rgba(0,0,0,0.9);
 }
 
 .house-cup-intro{
   max-width:620px;
-
   margin:0 0 48px;
-
   color:#b8945c;
-
   font-size:15px;
   line-height:2.1;
   letter-spacing:1px;
 }
 
-/* 展示櫃外框 */
+/* =========================
+展示區
+========================= */
 
 .house-cup-case{
   width:100%;
   padding:34px;
-
   display:grid;
   grid-template-columns:repeat(4, 1fr);
   gap:24px;
-
   border:1px solid rgba(184,148,92,0.28);
-
   background:
   linear-gradient(135deg, rgba(184,148,92,0.08), rgba(0,0,0,0.58)),
   rgba(0,0,0,0.38);
-
   box-shadow:
   0 0 46px rgba(0,0,0,0.5),
   inset 0 0 42px rgba(184,148,92,0.06);
@@ -156,20 +137,15 @@ h1{
 .house-card{
   min-height:500px;
   padding:26px 16px 28px;
-
   position:relative;
   overflow:hidden;
-
   display:flex;
   flex-direction:column;
   align-items:center;
-
   border:1px solid rgba(184,148,92,0.22);
-
   background:
   radial-gradient(circle at top, rgba(255,255,255,0.08), transparent 42%),
   linear-gradient(180deg, rgba(41,28,12,0.18), rgba(0,0,0,0.62));
-
   box-shadow:
   inset 0 0 28px rgba(255,255,255,0.03),
   0 0 26px rgba(0,0,0,0.35);
@@ -187,26 +163,22 @@ h1{
   width:88px;
   height:88px;
   object-fit:contain;
-
   margin-bottom:28px;
-
   filter:drop-shadow(0 0 16px rgba(216,195,154,0.28));
 }
 
-/* 寶石櫃 */
+/* =========================
+玻璃展示櫃
+========================= */
 
 .gem-display{
   width:150px;
   height:260px;
-
   padding:10px;
-
   border:1px solid rgba(184,148,92,0.42);
   border-radius:14px 14px 8px 8px;
-
   background:
   linear-gradient(135deg, rgba(184,148,92,0.18), rgba(0,0,0,0.35));
-
   box-shadow:
   0 0 24px rgba(0,0,0,0.45),
   inset 0 0 18px rgba(255,235,180,0.08);
@@ -215,13 +187,10 @@ h1{
 .gem-glass{
   width:100%;
   height:100%;
-
   position:relative;
   overflow:hidden;
-
   border-radius:10px 10px 6px 6px;
   border:1px solid rgba(255,236,190,0.25);
-
   background:
   linear-gradient(
     110deg,
@@ -231,46 +200,88 @@ h1{
     rgba(255,255,255,0.02)
   ),
   rgba(0,0,0,0.42);
-
   box-shadow:
   inset 0 0 28px rgba(255,255,255,0.08),
   inset 0 -20px 30px rgba(0,0,0,0.45);
 }
 
+.gem-glass::after{
+  content:"";
+  position:absolute;
+  left:12%;
+  right:12%;
+  bottom:8px;
+  height:34px;
+  background:radial-gradient(ellipse, rgba(0,0,0,.62), transparent 70%);
+  z-index:0;
+}
+
+/* =========================
+純 CSS 寶石堆
+========================= */
+
 .gem-pile{
   position:absolute;
-  left:0;
-  bottom:0;
-
-  width:100%;
-  height:0%;
-
+  left:50%;
+  bottom:12px;
+  transform:translateX(-50%);
+  width:82%;
+  height:0;
+  z-index:1;
   transition:height 2s ease;
-
-  background-size:24px 24px;
-  background-repeat:repeat;
 
   clip-path:polygon(
     0% 100%,
-    0% 38%,
-    12% 34%,
-    22% 42%,
-    34% 30%,
-    48% 38%,
-    60% 24%,
-    74% 36%,
-    88% 28%,
-    100% 40%,
+    0% 52%,
+    10% 46%,
+    20% 55%,
+    32% 40%,
+    45% 50%,
+    58% 28%,
+    72% 46%,
+    86% 34%,
+    100% 50%,
     100% 100%
   );
 
-  animation:gemGlow 2.8s infinite ease-in-out;
+  background:
+    linear-gradient(45deg, transparent 42%, currentColor 43% 57%, transparent 58%),
+    linear-gradient(-45deg, transparent 42%, currentColor 43% 57%, transparent 58%),
+    linear-gradient(135deg, transparent 42%, currentColor 43% 57%, transparent 58%),
+    linear-gradient(-135deg, transparent 42%, currentColor 43% 57%, transparent 58%);
+
+  background-size:
+    26px 26px,
+    26px 26px,
+    26px 26px,
+    26px 26px;
+
+  background-position:
+    0 0,
+    8px 6px,
+    15px 2px,
+    20px 12px;
+
+  filter:drop-shadow(0 0 10px currentColor);
+  animation:gemBreath 3s infinite ease-in-out;
+}
+
+.gem-pile::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 18% 72%, rgba(255,255,255,.95) 0 2px, transparent 3px),
+    radial-gradient(circle at 42% 58%, rgba(255,255,255,.85) 0 2px, transparent 3px),
+    radial-gradient(circle at 65% 76%, rgba(255,255,255,.9) 0 2px, transparent 3px),
+    radial-gradient(circle at 82% 44%, rgba(255,255,255,.85) 0 2px, transparent 3px);
+  animation:sparkleBlink 2.4s infinite ease-in-out;
 }
 
 .glass-shine{
   position:absolute;
   inset:0;
-
+  z-index:2;
   background:
   linear-gradient(
     110deg,
@@ -279,51 +290,54 @@ h1{
     transparent 34%,
     transparent 100%
   );
-
   transform:translateX(-90%);
   animation:glassShine 4.6s infinite ease-in-out;
-
   pointer-events:none;
 }
 
-/* 分數 */
+/* =========================
+分數
+========================= */
 
 .score-number{
   margin-top:30px;
-
   color:#d8c39a;
-
   font-family:"Cinzel", serif;
   font-size:34px;
   font-weight:700;
   letter-spacing:2px;
-
   text-shadow:0 0 16px rgba(184,148,92,0.24);
 }
 
 .score-number::after{
   content:" pts";
-
   color:rgba(184,148,92,0.78);
-
   font-size:14px;
   letter-spacing:1px;
 }
 
-/* 四種配色 */
+/* =========================
+四種配色
+========================= */
 
 .crimson .gem-pile{
-  background:
-  radial-gradient(circle, #ffe0a5 0 18%, transparent 20%),
-  radial-gradient(circle, #c23a32 0 24%, transparent 26%),
-  radial-gradient(circle, #681313 0 18%, transparent 20%);
+  color:#c83a32;
+  background-color:rgba(95,18,18,.45);
+}
 
-  background-position:
-  0 0,
-  11px 8px,
-  5px 17px;
+.emerald .gem-pile{
+  color:#38a96f;
+  background-color:rgba(20,70,45,.45);
+}
 
-  box-shadow:0 0 30px rgba(194,58,50,0.55);
+.sapphire .gem-pile{
+  color:#417bd6;
+  background-color:rgba(18,45,90,.45);
+}
+
+.amber .gem-pile{
+  color:#e3ba3d;
+  background-color:rgba(120,90,18,.45);
 }
 
 .crimson{
@@ -332,38 +346,10 @@ h1{
   0 0 26px rgba(0,0,0,0.35);
 }
 
-.emerald .gem-pile{
-  background:
-  radial-gradient(circle, #d8f0df 0 18%, transparent 20%),
-  radial-gradient(circle, #2f7b56 0 24%, transparent 26%),
-  radial-gradient(circle, #0d2b1f 0 18%, transparent 20%);
-
-  background-position:
-  0 0,
-  11px 8px,
-  5px 17px;
-
-  box-shadow:0 0 30px rgba(47,123,86,0.58);
-}
-
 .emerald{
   box-shadow:
   inset 0 0 28px rgba(47,123,86,0.14),
   0 0 26px rgba(0,0,0,0.35);
-}
-
-.sapphire .gem-pile{
-  background:
-  radial-gradient(circle, #d8e8ff 0 18%, transparent 20%),
-  radial-gradient(circle, #315a92 0 24%, transparent 26%),
-  radial-gradient(circle, #9a6a32 0 18%, transparent 20%);
-
-  background-position:
-  0 0,
-  11px 8px,
-  5px 17px;
-
-  box-shadow:0 0 30px rgba(49,90,146,0.58);
 }
 
 .sapphire{
@@ -372,35 +358,33 @@ h1{
   0 0 26px rgba(0,0,0,0.35);
 }
 
-.amber .gem-pile{
-  background:
-  radial-gradient(circle, #fff0a6 0 18%, transparent 20%),
-  radial-gradient(circle, #d1a12b 0 24%, transparent 26%),
-  radial-gradient(circle, #18120a 0 18%, transparent 20%);
-
-  background-position:
-  0 0,
-  11px 8px,
-  5px 17px;
-
-  box-shadow:0 0 30px rgba(209,161,43,0.58);
-}
-
 .amber{
   box-shadow:
   inset 0 0 28px rgba(209,161,43,0.14),
   0 0 26px rgba(0,0,0,0.35);
 }
 
-/* 動畫 */
+/* =========================
+動畫
+========================= */
 
-@keyframes gemGlow{
+@keyframes gemBreath{
   0%,100%{
-    filter:brightness(0.92);
+    filter:drop-shadow(0 0 8px currentColor) brightness(1.05);
   }
 
   50%{
-    filter:brightness(1.28);
+    filter:drop-shadow(0 0 18px currentColor) brightness(1.35);
+  }
+}
+
+@keyframes sparkleBlink{
+  0%,100%{
+    opacity:.4;
+  }
+
+  50%{
+    opacity:1;
   }
 }
 
@@ -420,7 +404,9 @@ h1{
   }
 }
 
-/* 手機版 */
+/* =========================
+手機版
+========================= */
 
 @media (max-width:1000px){
 

@@ -155,21 +155,64 @@ h1{
 
 /* 固定徽章區，避免下面展示櫃歪掉 */
 
-.house-emblem{
-  height:110px;
-  width:auto;
-  object-fit:contain;
-  margin-bottom:32px;
-  filter:drop-shadow(0 0 16px rgba(216,195,154,0.28));
+.emblem-wrap{
+
+  height:130px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  margin-bottom:28px;
+
 }
 
-.emblem-crimson,
-.emblem-emerald,
-.emblem-sapphire,
-.emblem-amber{
-  height:110px;
+.house-emblem{
+
   width:auto;
-  transform:none;
+
+  max-height:110px;
+
+  object-fit:contain;
+
+  margin-bottom:0;
+
+  filter:drop-shadow(0 0 16px rgba(216,195,154,0.28));
+
+}
+
+.emblem-crimson{
+
+  max-height:115px;
+
+  transform:translateY(0);
+
+}
+
+.emblem-emerald{
+
+  max-height:145px;
+
+  transform:translateY(0);
+
+}
+
+.emblem-sapphire{
+
+  max-height:105px;
+
+  transform:translateY(0);
+
+}
+
+.emblem-amber{
+
+  max-height:120px;
+
+  transform:translateY(0);
+
 }
 
 /* 玻璃展示櫃 */

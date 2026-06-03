@@ -12,11 +12,11 @@ houseCards.forEach(function(card){
   const scoreNumber = card.querySelector(".score-number");
   const gemPile = card.querySelector(".gem-pile");
 
-  const gemHeight = Math.max((finalScore / maxScore) * 88, 10);
+  const gemHeight = Math.max((finalScore / maxScore) * 180, 28);
 
   setTimeout(function(){
-    gemPile.style.height = gemHeight + "%";
-  }, 300);
+    gemPile.style.height = gemHeight + "px";
+  }, 350);
 
   let currentScore = 0;
   const step = Math.max(1, Math.ceil(finalScore / 80));

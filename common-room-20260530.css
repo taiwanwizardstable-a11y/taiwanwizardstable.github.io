@@ -464,4 +464,8 @@ nav a:hover{
     max-width:100%;
   }
 
+ .map-link img{
+  width:96px;
+} 
+
 }

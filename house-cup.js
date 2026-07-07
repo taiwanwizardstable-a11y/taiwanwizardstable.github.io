@@ -1,14 +1,14 @@
 const houseCards = document.querySelectorAll(".house-card");
 
 const scores = Array.from(houseCards).map(function(card){
-  return Number(card.dataset.score);
+  return Number(card.dataset.score) || 0;
 });
 
-const maxScore = Math.max(...scores);
+const maxScore = Math.max(...scores, 1);
 
 houseCards.forEach(function(card){
 
-  const finalScore = Number(card.dataset.score);
+  const finalScore = Number(card.dataset.score) || 0;
   const scoreNumber = card.querySelector(".score-number");
   const gemPile = card.querySelector(".gem-pile");
 

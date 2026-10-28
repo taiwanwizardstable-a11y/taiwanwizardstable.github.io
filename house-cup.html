@@ -1,28 +1,271 @@
+
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>House Cup | Taiwan Wizard's Table</title>
+
   <link rel="stylesheet" href="house-cup.css">
+
+  <style>
+
+    /* ======================================
+       HALL OF CHAMPIONS
+       歷屆學院冠軍
+    ====================================== */
+
+    .champions-section {
+      width: 100%;
+      max-width: 1100px;
+      margin: 110px auto 90px;
+      padding: 0 20px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    /* 金色分隔線 */
+
+    .champions-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+      margin-bottom: 70px;
+    }
+
+    .champions-divider::before,
+    .champions-divider::after {
+      content: "";
+      width: 160px;
+      max-width: 28%;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(184, 148, 92, 0.7),
+        transparent
+      );
+    }
+
+    .champions-divider span {
+      color: #b8945c;
+      font-size: 20px;
+    }
+
+    /* 標題 */
+
+    .champions-small-title {
+      font-family: "Cinzel", Georgia, serif;
+      color: #b8945c;
+      font-size: 12px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      margin: 0 0 24px;
+    }
+
+    .champions-title {
+      font-family: "Cinzel", Georgia, serif;
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 400;
+      letter-spacing: 3px;
+      color: #e2cba5;
+      line-height: 1.3;
+      margin: 0;
+    }
+
+    .champions-subtitle {
+      font-family: "Noto Serif TC", serif;
+      color: #b39a74;
+      font-size: 15px;
+      letter-spacing: 5px;
+      margin: 22px 0 0;
+    }
+
+    /* 冠軍展示 */
+
+    .champions-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 60px;
+      margin-top: 60px;
+    }
+
+    .champion-entry {
+      width: 100%;
+      max-width: 390px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(30px);
+      transition:
+        opacity 1.1s ease,
+        transform 1.1s ease;
+    }
+
+    .champion-entry.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* 冠軍盾牌 */
+
+    .champion-plaque-wrap {
+      position: relative;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .champion-plaque {
+      display: block;
+      width: 100%;
+      max-width: 350px;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(
+        0 16px 25px rgba(0, 0, 0, 0.65)
+      );
+      transition:
+        transform 0.6s ease,
+        filter 0.6s ease;
+    }
+
+    .champion-entry:hover .champion-plaque {
+      transform: translateY(-7px) scale(1.025);
+      filter:
+        drop-shadow(0 18px 28px rgba(0, 0, 0, 0.7))
+        drop-shadow(0 0 15px rgba(184, 148, 92, 0.2));
+    }
+
+    /* 學院名稱 */
+
+    .champion-house-name {
+      font-family: "Cinzel", Georgia, serif;
+      font-size: 25px;
+      font-weight: 400;
+      letter-spacing: 4px;
+      color: #d8bf96;
+      margin: 25px 0 12px;
+      text-transform: uppercase;
+    }
+
+    /* 年份 */
+
+    .champion-year {
+      font-family: "Cinzel", Georgia, serif;
+      color: #a78d69;
+      font-size: 12px;
+      letter-spacing: 3px;
+      line-height: 1.9;
+      margin: 0;
+    }
+
+    .champion-ornament {
+      color: #987b51;
+      font-size: 17px;
+      margin-top: 30px;
+      opacity: 0.8;
+    }
+
+    /* 手機版 */
+
+    @media (max-width: 768px) {
+
+      .champions-section {
+        margin: 75px auto 65px;
+        padding: 0 15px;
+      }
+
+      .champions-divider {
+        margin-bottom: 50px;
+      }
+
+      .champions-small-title {
+        font-size: 10px;
+        letter-spacing: 4px;
+      }
+
+      .champions-title {
+        font-size: clamp(28px, 7vw, 40px);
+        letter-spacing: 1px;
+      }
+
+      .champions-subtitle {
+        font-size: 13px;
+        letter-spacing: 3px;
+      }
+
+      .champions-gallery {
+        margin-top: 45px;
+        gap: 45px;
+      }
+
+      .champion-entry {
+        max-width: 320px;
+      }
+
+      .champion-plaque {
+        max-width: 290px;
+      }
+
+      .champion-house-name {
+        font-size: 22px;
+      }
+
+      .champion-year {
+        font-size: 11px;
+      }
+
+    }
+
+    /* 無障礙：減少動態 */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .champion-entry {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+
+      .champion-plaque {
+        transition: none;
+      }
+
+    }
+
+  </style>
+
 </head>
 
 <body>
 
 <div class="page">
 
+  <!-- ======================================
+       左側導覽列
+  ====================================== -->
+
   <aside class="sidebar">
 
     <a href="home.html">
-      <img 
-        class="logo" 
+
+      <img
+        class="logo"
         src="https://i.ibb.co/DDqZVRrd/A6-FD1-A22-C056-4815-A460-02-B004988-C34.png"
         alt="Taiwan Wizard's Table Logo"
       >
+
     </a>
 
     <nav>
+
       <a href="founder.html">Founder</a>
       <a href="members.html">Members</a>
       <a href="gatherings.html">Gatherings</a>
@@ -31,15 +274,28 @@
       <a href="house-cup.html">House Cup</a>
       <a href="calendar.html">Calendar</a>
       <a href="joinus.html">Join Us</a>
+
     </nav>
 
   </aside>
 
+
+  <!-- ======================================
+       主要內容
+  ====================================== -->
+
   <main class="content">
+
+
+    <!-- ====================================
+         HOUSE CUP 學院積分
+    ==================================== -->
 
     <section class="house-cup-section">
 
-      <p class="small-title">Taiwan Wizard's Table</p>
+      <p class="small-title">
+        Taiwan Wizard's Table
+      </p>
 
       <h1>House Cup</h1>
 
@@ -47,110 +303,322 @@
         所有參與、協助、創造與陪伴，都會化成展示櫃裡閃爍的魔法寶石
       </p>
 
+
+      <!-- 四學院積分展示櫃 -->
+
       <div class="house-cup-case">
 
-        <div class="house-card crimson" data-score="2080">
+
+        <!-- ==============================
+             葛來分多 GRYFFINDOR
+        ============================== -->
+
+        <div class="house-card crimson" data-score="160">
 
           <div class="emblem-wrap">
+
             <img
               class="house-emblem emblem-crimson"
               src="images/2A488E51-FF27-43FB-A548-77389971DC1B.png"
-              alt="Crimson Emblem"
+              alt="Gryffindor Emblem"
             >
+
           </div>
 
           <div class="gem-display">
+
             <div class="gem-glass">
+
               <div class="gem-pile"></div>
+
               <div class="glass-shine"></div>
+
             </div>
+
           </div>
 
           <div class="score-number">0</div>
 
         </div>
 
-        <div class="house-card emerald" data-score="4810">
+
+        <!-- ==============================
+             史萊哲林 SLYTHERIN
+        ============================== -->
+
+        <div class="house-card emerald" data-score="860">
 
           <div class="emblem-wrap">
+
             <img
               class="house-emblem emblem-emerald"
               src="images/FD72F689-28F6-436F-ACE7-677AD39D3E0B.png"
-              alt="Emerald Emblem"
+              alt="Slytherin Emblem"
             >
+
           </div>
 
           <div class="gem-display">
+
             <div class="gem-glass">
+
               <div class="gem-pile"></div>
+
               <div class="glass-shine"></div>
+
             </div>
+
           </div>
 
           <div class="score-number">0</div>
 
         </div>
 
-        <div class="house-card sapphire" data-score="5800">
+
+        <!-- ==============================
+             雷文克勞 RAVENCLAW
+        ============================== -->
+
+        <div class="house-card sapphire" data-score="720">
 
           <div class="emblem-wrap">
+
             <img
               class="house-emblem emblem-sapphire"
               src="images/IMG_0599.png"
-              alt="Sapphire Emblem"
+              alt="Ravenclaw Emblem"
             >
+
           </div>
 
           <div class="gem-display">
+
             <div class="gem-glass">
+
               <div class="gem-pile"></div>
+
               <div class="glass-shine"></div>
+
             </div>
+
           </div>
 
           <div class="score-number">0</div>
 
         </div>
 
-        <div class="house-card amber" data-score="4180">
+
+        <!-- ==============================
+             赫夫帕夫 HUFFLEPUFF
+        ============================== -->
+
+        <div class="house-card amber" data-score="460">
 
           <div class="emblem-wrap">
+
             <img
               class="house-emblem emblem-amber"
               src="images/FE8AE302-5455-4AF3-A602-7230C0FE7927.png"
-              alt="Amber Emblem"
+              alt="Hufflepuff Emblem"
             >
+
           </div>
 
           <div class="gem-display">
+
             <div class="gem-glass">
+
               <div class="gem-pile"></div>
+
               <div class="glass-shine"></div>
+
             </div>
+
           </div>
 
           <div class="score-number">0</div>
 
         </div>
+
 
       </div>
 
     </section>
 
+
+
+    <!-- ====================================
+         HALL OF CHAMPIONS
+         歷屆學院冠軍
+    ==================================== -->
+
+    <section
+      class="champions-section"
+      aria-labelledby="champions-title"
+    >
+
+
+      <!-- 金色分隔線 -->
+
+      <div class="champions-divider">
+
+        <span aria-hidden="true">✦</span>
+
+      </div>
+
+
+      <!-- 榮譽殿堂標題 -->
+
+      <div class="champions-heading">
+
+        <p class="champions-small-title">
+          The Legacy of TWT
+        </p>
+
+        <h2
+          class="champions-title"
+          id="champions-title"
+        >
+          Hall of Champions
+        </h2>
+
+        <p class="champions-subtitle">
+          歷屆學院冠軍
+        </p>
+
+      </div>
+
+
+      <!-- 冠軍展示區 -->
+
+      <div class="champions-gallery">
+
+
+        <!-- ==============================
+             第一屆學院冠軍
+             RAVENCLAW 2025–2026
+        ============================== -->
+
+        <article class="champion-entry">
+
+          <div class="champion-plaque-wrap">
+
+            <img
+              class="champion-plaque"
+              src="images/IMG_1384.png"
+              alt="First House Cup Champion, Ravenclaw, 2025–2026"
+              loading="lazy"
+            >
+
+          </div>
+
+
+          <h3 class="champion-house-name">
+            Ravenclaw
+          </h3>
+
+          <p class="champion-year">
+            First House Cup · 2025–2026
+          </p>
+
+          <div
+            class="champion-ornament"
+            aria-hidden="true"
+          >
+            ✦
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
   </main>
 
 </div>
 
+
+
+<!-- ======================================
+     原本的寶石積分動畫
+====================================== -->
+
 <script src="house-cup.js"></script>
 
+
+
+<!-- ======================================
+     冠軍盾牌淡入動畫
+====================================== -->
+
 <script>
-document.addEventListener("contextmenu", function(e){
+
+document.addEventListener("DOMContentLoaded", function() {
+
+  const champions = document.querySelectorAll(
+    ".champion-entry"
+  );
+
+  if (!("IntersectionObserver" in window)) {
+
+    champions.forEach(function(champion) {
+      champion.classList.add("is-visible");
+    });
+
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+
+    function(entries) {
+
+      entries.forEach(function(entry) {
+
+        if (entry.isIntersecting) {
+
+          entry.target.classList.add("is-visible");
+
+          observer.unobserve(entry.target);
+
+        }
+
+      });
+
+    },
+
+    {
+      threshold: 0.12
+    }
+
+  );
+
+  champions.forEach(function(champion) {
+    observer.observe(champion);
+  });
+
+});
+
+</script>
+
+
+
+<!-- ======================================
+     禁止右鍵與圖片拖曳
+====================================== -->
+
+<script>
+
+document.addEventListener("contextmenu", function(e) {
   e.preventDefault();
 });
 
-document.addEventListener("dragstart", function(e){
+document.addEventListener("dragstart", function(e) {
   e.preventDefault();
 });
+
 </script>
 
 </body>

@@ -1,40 +1,74 @@
 
-
 <!DOCTYPE html>
 <html lang="zh-Hant">
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
   <title>House Cup | Taiwan Wizard's Table</title>
 
   <link rel="stylesheet" href="house-cup.css">
 
+  <!-- =====================================
+       四學院積分設定
+       以後只需要修改這裡
+  ===================================== -->
+
+  <script>
+    const HOUSE_SCORES = {
+      gryffindor: 160,   // 葛來分多
+      slytherin: 860,    // 史萊哲林
+      ravenclaw: 720,      // 雷文克勞（待更新）
+      hufflepuff:  460,     // 赫夫帕夫（待更新）
+    };
+  </script>
+
   <style>
 
-    /* ======================================
-       HALL OF CHAMPIONS
-       歷屆學院冠軍
-    ====================================== */
+    /* =====================================
+       原有內容上下排列
+    ===================================== */
 
-    .champions-section {
-      width: 100%;
-      max-width: 1100px;
-      margin: 110px auto 90px;
-      padding: 0 20px;
-      box-sizing: border-box;
-      text-align: center;
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      min-width: 0;
     }
 
-    /* 金色分隔線 */
+    .content > .house-cup-section {
+      width: 100%;
+      max-width: 1100px;
+      flex: 0 0 auto;
+      box-sizing: border-box;
+    }
+
+    .content > .champions-section {
+      width: 100%;
+      max-width: 1100px;
+      flex: 0 0 auto;
+      align-self: center;
+      box-sizing: border-box;
+    }
+
+    /* =====================================
+       HALL OF CHAMPIONS
+    ===================================== */
+
+    .champions-section {
+      margin: 100px auto 90px;
+      padding: 0 20px;
+      text-align: center;
+    }
 
     .champions-divider {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 22px;
-      margin-bottom: 70px;
+      margin-bottom: 65px;
     }
 
     .champions-divider::before,
@@ -56,8 +90,6 @@
       font-size: 20px;
     }
 
-    /* 標題 */
-
     .champions-small-title {
       font-family: "Cinzel", Georgia, serif;
       color: #b8945c;
@@ -69,7 +101,7 @@
 
     .champions-title {
       font-family: "Cinzel", Georgia, serif;
-      font-size: clamp(32px, 5vw, 56px);
+      font-size: clamp(30px, 5vw, 54px);
       font-weight: 400;
       letter-spacing: 3px;
       color: #e2cba5;
@@ -85,20 +117,23 @@
       margin: 22px 0 0;
     }
 
-    /* 冠軍展示 */
+    /* =====================================
+       冠軍展示區
+    ===================================== */
 
     .champions-gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       align-items: flex-start;
-      gap: 60px;
-      margin-top: 60px;
+      gap: 55px;
+      margin-top: 55px;
     }
 
     .champion-entry {
       width: 100%;
-      max-width: 390px;
+      max-width: 280px;
+      margin: 0 auto;
       text-align: center;
       opacity: 0;
       transform: translateY(30px);
@@ -112,24 +147,23 @@
       transform: translateY(0);
     }
 
-    /* 冠軍盾牌 */
-
     .champion-plaque-wrap {
-      position: relative;
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
+    /* 電腦版盾牌 220px */
+
     .champion-plaque {
       display: block;
       width: 100%;
-      max-width: 350px;
+      max-width: 220px;
       height: auto;
       object-fit: contain;
       filter: drop-shadow(
-        0 16px 25px rgba(0, 0, 0, 0.65)
+        0 14px 22px rgba(0, 0, 0, 0.6)
       );
       transition:
         transform 0.6s ease,
@@ -137,17 +171,15 @@
     }
 
     .champion-entry:hover .champion-plaque {
-      transform: translateY(-7px) scale(1.025);
+      transform: translateY(-6px) scale(1.025);
       filter:
-        drop-shadow(0 18px 28px rgba(0, 0, 0, 0.7))
-        drop-shadow(0 0 15px rgba(184, 148, 92, 0.2));
+        drop-shadow(0 16px 25px rgba(0, 0, 0, 0.7))
+        drop-shadow(0 0 12px rgba(184, 148, 92, 0.2));
     }
-
-    /* 學院名稱 */
 
     .champion-house-name {
       font-family: "Cinzel", Georgia, serif;
-      font-size: 25px;
+      font-size: 24px;
       font-weight: 400;
       letter-spacing: 4px;
       color: #d8bf96;
@@ -155,13 +187,11 @@
       text-transform: uppercase;
     }
 
-    /* 年份 */
-
     .champion-year {
       font-family: "Cinzel", Georgia, serif;
       color: #a78d69;
       font-size: 12px;
-      letter-spacing: 3px;
+      letter-spacing: 2px;
       line-height: 1.9;
       margin: 0;
     }
@@ -169,13 +199,28 @@
     .champion-ornament {
       color: #987b51;
       font-size: 17px;
-      margin-top: 30px;
+      margin-top: 28px;
       opacity: 0.8;
     }
 
-    /* 手機版 */
+    /* =====================================
+       手機版
+    ===================================== */
 
     @media (max-width: 768px) {
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .content > .house-cup-section,
+      .content > .champions-section {
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 auto;
+      }
 
       .champions-section {
         margin: 75px auto 65px;
@@ -203,31 +248,29 @@
 
       .champions-gallery {
         margin-top: 45px;
-        gap: 45px;
+        gap: 40px;
       }
 
       .champion-entry {
-        max-width: 320px;
+        max-width: 250px;
       }
 
+      /* 手機版盾牌 180px */
+
       .champion-plaque {
-        max-width: 290px;
+        max-width: 180px;
       }
 
       .champion-house-name {
-        font-size: 22px;
+        font-size: 21px;
       }
 
       .champion-year {
         font-size: 11px;
       }
-
     }
 
-    /* 無障礙：減少動態 */
-
     @media (prefers-reduced-motion: reduce) {
-
       .champion-entry {
         opacity: 1;
         transform: none;
@@ -237,35 +280,30 @@
       .champion-plaque {
         transition: none;
       }
-
     }
 
   </style>
-
 </head>
 
 <body>
 
 <div class="page">
 
-  <!-- ======================================
+  <!-- =====================================
        左側導覽列
-  ====================================== -->
+  ===================================== -->
 
   <aside class="sidebar">
 
     <a href="home.html">
-
       <img
         class="logo"
         src="https://i.ibb.co/DDqZVRrd/A6-FD1-A22-C056-4815-A460-02-B004988-C34.png"
         alt="Taiwan Wizard's Table Logo"
       >
-
     </a>
 
     <nav>
-
       <a href="founder.html">Founder</a>
       <a href="members.html">Members</a>
       <a href="gatherings.html">Gatherings</a>
@@ -274,22 +312,19 @@
       <a href="house-cup.html">House Cup</a>
       <a href="calendar.html">Calendar</a>
       <a href="joinus.html">Join Us</a>
-
     </nav>
 
   </aside>
 
-
-  <!-- ======================================
+  <!-- =====================================
        主要內容
-  ====================================== -->
+  ===================================== -->
 
   <main class="content">
 
-
-    <!-- ====================================
-         HOUSE CUP 學院積分
-    ==================================== -->
+    <!-- ===================================
+         HOUSE CUP 四學院積分
+    =================================== -->
 
     <section class="house-cup-section">
 
@@ -303,171 +338,141 @@
         所有參與、協助、創造與陪伴，都會化成展示櫃裡閃爍的魔法寶石
       </p>
 
-
-      <!-- 四學院積分展示櫃 -->
-
       <div class="house-cup-case">
 
+        <!-- =================================
+             GRYFFINDOR 葛來分多
+        ================================= -->
 
-        <!-- ==============================
-             葛來分多 GRYFFINDOR
-        ============================== -->
-
-        <div class="house-card crimson" data-score="160">
+        <div
+          class="house-card crimson"
+          data-house="gryffindor"
+          data-score="160"
+        >
 
           <div class="emblem-wrap">
-
             <img
               class="house-emblem emblem-crimson"
               src="images/2A488E51-FF27-43FB-A548-77389971DC1B.png"
               alt="Gryffindor Emblem"
             >
-
           </div>
 
           <div class="gem-display">
-
             <div class="gem-glass">
-
               <div class="gem-pile"></div>
-
               <div class="glass-shine"></div>
-
             </div>
-
           </div>
 
           <div class="score-number">0</div>
 
         </div>
 
+        <!-- =================================
+             SLYTHERIN 史萊哲林
+        ================================= -->
 
-        <!-- ==============================
-             史萊哲林 SLYTHERIN
-        ============================== -->
-
-        <div class="house-card emerald" data-score="860">
+        <div
+          class="house-card emerald"
+          data-house="slytherin"
+          data-score="860"
+        >
 
           <div class="emblem-wrap">
-
             <img
               class="house-emblem emblem-emerald"
               src="images/FD72F689-28F6-436F-ACE7-677AD39D3E0B.png"
               alt="Slytherin Emblem"
             >
-
           </div>
 
           <div class="gem-display">
-
             <div class="gem-glass">
-
               <div class="gem-pile"></div>
-
               <div class="glass-shine"></div>
-
             </div>
-
           </div>
 
           <div class="score-number">0</div>
 
         </div>
 
+        <!-- =================================
+             RAVENCLAW 雷文克勞
+        ================================= -->
 
-        <!-- ==============================
-             雷文克勞 RAVENCLAW
-        ============================== -->
-
-        <div class="house-card sapphire" data-score="720">
+        <div
+          class="house-card sapphire"
+          data-house="ravenclaw"
+          data-score="0"
+        >
 
           <div class="emblem-wrap">
-
             <img
               class="house-emblem emblem-sapphire"
               src="images/IMG_0599.png"
               alt="Ravenclaw Emblem"
             >
-
           </div>
 
           <div class="gem-display">
-
             <div class="gem-glass">
-
               <div class="gem-pile"></div>
-
               <div class="glass-shine"></div>
-
             </div>
-
           </div>
 
           <div class="score-number">0</div>
 
         </div>
 
+        <!-- =================================
+             HUFFLEPUFF 赫夫帕夫
+        ================================= -->
 
-        <!-- ==============================
-             赫夫帕夫 HUFFLEPUFF
-        ============================== -->
-
-        <div class="house-card amber" data-score="460">
+        <div
+          class="house-card amber"
+          data-house="hufflepuff"
+          data-score="0"
+        >
 
           <div class="emblem-wrap">
-
             <img
               class="house-emblem emblem-amber"
               src="images/FE8AE302-5455-4AF3-A602-7230C0FE7927.png"
               alt="Hufflepuff Emblem"
             >
-
           </div>
 
           <div class="gem-display">
-
             <div class="gem-glass">
-
               <div class="gem-pile"></div>
-
               <div class="glass-shine"></div>
-
             </div>
-
           </div>
 
           <div class="score-number">0</div>
 
         </div>
 
-
       </div>
 
     </section>
 
-
-
-    <!-- ====================================
+    <!-- ===================================
          HALL OF CHAMPIONS
          歷屆學院冠軍
-    ==================================== -->
+    =================================== -->
 
     <section
       class="champions-section"
       aria-labelledby="champions-title"
     >
 
-
-      <!-- 金色分隔線 -->
-
       <div class="champions-divider">
-
         <span aria-hidden="true">✦</span>
-
       </div>
-
-
-      <!-- 榮譽殿堂標題 -->
 
       <div class="champions-heading">
 
@@ -488,16 +493,9 @@
 
       </div>
 
-
-      <!-- 冠軍展示區 -->
-
       <div class="champions-gallery">
 
-
-        <!-- ==============================
-             第一屆學院冠軍
-             RAVENCLAW 2025–2026
-        ============================== -->
+        <!-- 第一屆冠軍：雷文克勞 -->
 
         <article class="champion-entry">
 
@@ -511,7 +509,6 @@
             >
 
           </div>
-
 
           <h3 class="champion-house-name">
             Ravenclaw
@@ -530,69 +527,85 @@
 
         </article>
 
-
       </div>
 
     </section>
-
 
   </main>
 
 </div>
 
-
-
-<!-- ======================================
-     原本的寶石積分動畫
-====================================== -->
-
-<script src="house-cup.js"></script>
-
-
-
-<!-- ======================================
-     冠軍盾牌淡入動畫
-====================================== -->
+<!-- =====================================
+     將分數寫入原本計分器
+===================================== -->
 
 <script>
+  document.querySelectorAll(
+    ".house-card[data-house]"
+  ).forEach(function(card) {
 
+    const house = card.dataset.house;
+
+    if (
+      Object.prototype.hasOwnProperty.call(
+        HOUSE_SCORES,
+        house
+      )
+    ) {
+      card.dataset.score = HOUSE_SCORES[house];
+    }
+
+  });
+</script>
+
+<!-- 原本的寶石積分動畫 -->
+<script src="house-cup.js"></script>
+
+<!-- =====================================
+     冠軍盾牌淡入動畫
+===================================== -->
+
+<script>
 document.addEventListener("DOMContentLoaded", function() {
 
   const champions = document.querySelectorAll(
     ".champion-entry"
   );
 
-  if (!("IntersectionObserver" in window)) {
-
+  if (
+    window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches
+  ) {
     champions.forEach(function(champion) {
       champion.classList.add("is-visible");
     });
+    return;
+  }
 
+  if (!("IntersectionObserver" in window)) {
+    champions.forEach(function(champion) {
+      champion.classList.add("is-visible");
+    });
     return;
   }
 
   const observer = new IntersectionObserver(
-
     function(entries) {
 
       entries.forEach(function(entry) {
 
         if (entry.isIntersecting) {
-
           entry.target.classList.add("is-visible");
-
           observer.unobserve(entry.target);
-
         }
 
       });
 
     },
-
     {
       threshold: 0.12
     }
-
   );
 
   champions.forEach(function(champion) {
@@ -600,17 +613,13 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
 });
-
 </script>
 
-
-
-<!-- ======================================
+<!-- =====================================
      禁止右鍵與圖片拖曳
-====================================== -->
+===================================== -->
 
 <script>
-
 document.addEventListener("contextmenu", function(e) {
   e.preventDefault();
 });
@@ -618,7 +627,6 @@ document.addEventListener("contextmenu", function(e) {
 document.addEventListener("dragstart", function(e) {
   e.preventDefault();
 });
-
 </script>
 
 </body>

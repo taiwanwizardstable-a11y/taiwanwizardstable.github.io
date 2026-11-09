@@ -1,6 +1,5 @@
 
 <!DOCTYPE html>
-
 <html lang="zh-Hant">
 
 <head>
@@ -13,11 +12,79 @@
 
   <link rel="stylesheet" href="common-room-20260530.css">
 
+  <style>
+
+    /* =========================
+       學院姓名標籤
+       僅套用於本頁
+    ========================= */
+
+    .people-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .people-list span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 52px;
+      padding: 12px 22px;
+
+      border-radius: 999px;
+      border: 1px solid;
+
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    /* 史萊哲林 */
+
+    .people-list span.slytherin {
+      background: #17291f;
+      border-color: #304638;
+      color: #c9d6cb;
+    }
+
+    /* 雷文克勞 */
+
+    .people-list span.ravenclaw {
+      background: #19243c;
+      border-color: #303d5c;
+      color: #c9d2e6;
+    }
+
+    /* 赫夫帕夫 */
+
+    .people-list span.hufflepuff {
+      background: #3b3016;
+      border-color: #584922;
+      color: #e0d0a5;
+    }
+
+    /* 葛來分多 */
+
+    .people-list span.gryffindor {
+      background: #3b1b20;
+      border-color: #633039;
+      color: #e0bfc2;
+    }
+
+  </style>
+
 </head>
 
 <body>
 
 <div class="page">
+
+  <!-- 左側導覽列 -->
 
   <aside class="sidebar">
 
@@ -42,24 +109,32 @@
 
   </aside>
 
+  <!-- 主要內容 -->
+
   <main class="content">
 
     <section class="entry-section">
 
       <div class="entry-card">
 
+        <!-- 活動日期 -->
+
         <div class="entry-date">
           2026.8.21–8.22
         </div>
 
-        <!-- 活動照片：在 src 填入照片網址 -->
+        <!-- 活動照片 -->
 
         <div class="entry-photo">
+
           <img
             src="images/LineCamera_20261110_000913_106.jpeg"
             alt="Common Room 2026.8.21–8.22"
           >
+
         </div>
+
+        <!-- 主揪者 -->
 
         <div class="entry-block">
 
@@ -68,10 +143,16 @@
           </p>
 
           <div class="people-list">
-            <span class="hufflepuff">VV雲妮露</span>
+
+            <span class="hufflepuff">
+              VV雲妮露
+            </span>
+
           </div>
 
         </div>
+
+        <!-- 參加者 -->
 
         <div class="entry-block">
 
@@ -80,20 +161,29 @@
           </p>
 
           <div class="people-list">
+
             <span class="slytherin">珞塔</span>
+
             <span class="ravenclaw">芋圓</span>
+
             <span class="ravenclaw">喵喵</span>
+
             <span class="hufflepuff">英文</span>
+
             <span class="gryffindor">Candy</span>
+
             <span class="ravenclaw">沙拉雞</span>
+
             <span class="slytherin">蝦蝦</span>
+
             <span class="hufflepuff">小屋</span>
+
           </div>
 
         </div>
 
         <!-- Instagram Reel -->
-        <!-- 有影片網址後可啟用 -->
+        <!-- 尚未提供影片網址，暫時隱藏 -->
 
         <!--
         <a
@@ -106,19 +196,25 @@
         </a>
         -->
 
+        <!-- Tracks Map 卷軸 -->
+
         <div class="map-link">
 
           <a
             href="https://taiwanwizardstable-a11y.github.io/taiwanwizardstable.github.io/tracks.html"
             aria-label="Back to Tracks Map"
           >
+
             <img
               src="images/1CCCAA32-C019-4BA0-93AB-530AB9A23E09.png"
               alt="Tracks Map"
             >
+
           </a>
 
         </div>
+
+        <!-- 返回 Common Room -->
 
         <div class="back-link">
 
@@ -135,6 +231,8 @@
   </main>
 
 </div>
+
+<!-- 禁止右鍵與圖片拖曳 -->
 
 <script>
 

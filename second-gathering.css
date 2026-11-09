@@ -37,8 +37,7 @@ body{
 }
 
 /* =========================
-   左側欄位
-   保留第一屆設計
+   左側導覽列
 ========================= */
 
 .sidebar{
@@ -46,8 +45,7 @@ body{
   min-height:100vh;
   padding:50px 28px;
 
-  border-right:
-    1px solid rgba(184,148,92,0.2);
+  border-right:1px solid rgba(184,148,92,0.2);
 
   background:rgba(0,0,0,0.45);
   backdrop-filter:blur(8px);
@@ -61,10 +59,9 @@ body{
   width:160px;
   margin-bottom:60px;
 
-  filter:
-    drop-shadow(
-      0 0 12px rgba(184,148,92,0.3)
-    );
+  filter:drop-shadow(
+    0 0 12px rgba(184,148,92,0.3)
+  );
 }
 
 nav{
@@ -84,8 +81,7 @@ nav a{
 
   padding:14px 12px;
 
-  border-bottom:
-    1px solid rgba(184,148,92,0.18);
+  border-bottom:1px solid rgba(184,148,92,0.18);
 
   transition:0.3s;
 }
@@ -94,12 +90,11 @@ nav a:hover{
   color:#e1bf87;
   padding-left:22px;
 
-  text-shadow:
-    0 0 16px rgba(184,148,92,0.4);
+  text-shadow:0 0 16px rgba(184,148,92,0.4);
 }
 
 /* =========================
-   右側主要內容
+   主要內容
 ========================= */
 
 .content{
@@ -114,8 +109,7 @@ nav a:hover{
   max-width:1400px;
   margin:auto;
 
-  box-shadow:
-    0 25px 80px rgba(0,0,0,0.55);
+  box-shadow:0 25px 80px rgba(0,0,0,0.55);
 }
 
 /* =========================
@@ -127,7 +121,6 @@ nav a:hover{
   overflow:hidden;
 
   min-height:620px;
-
   padding:110px 55px 95px;
 
   display:flex;
@@ -150,33 +143,25 @@ nav a:hover{
       #080e19 100%
     );
 
-  border:
-    1px solid rgba(184,148,92,0.5);
-
+  border:1px solid rgba(184,148,92,0.5);
   color:#e9d9b9;
 }
 
 .storybook-cover::before{
   content:"";
-
   position:absolute;
   inset:18px;
 
-  border:
-    1px solid rgba(194,157,96,0.5);
-
+  border:1px solid rgba(194,157,96,0.5);
   pointer-events:none;
 }
 
 .storybook-cover::after{
   content:"";
-
   position:absolute;
   inset:25px;
 
-  border:
-    1px solid rgba(194,157,96,0.15);
-
+  border:1px solid rgba(194,157,96,0.15);
   pointer-events:none;
 }
 
@@ -187,7 +172,6 @@ nav a:hover{
   gap:18px;
 
   margin-bottom:42px;
-
   color:#c4a46d;
 }
 
@@ -196,13 +180,12 @@ nav a:hover{
   width:75px;
   height:1px;
 
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      #b8945c,
-      transparent
-    );
+  background:linear-gradient(
+    90deg,
+    transparent,
+    #b8945c,
+    transparent
+  );
 }
 
 .ornament-symbol{
@@ -211,19 +194,16 @@ nav a:hover{
 
 .small-title{
   margin:0 0 30px;
-
   color:#c4a46d;
 
   font-family:"Cinzel",serif;
   font-size:12px;
   letter-spacing:5px;
-
   text-transform:uppercase;
 }
 
 .edition-label{
   margin:0 0 18px;
-
   color:#e2d2b0;
 
   font-family:"Cinzel",serif;
@@ -233,7 +213,6 @@ nav a:hover{
 
 .storybook-cover h1{
   margin:0;
-
   color:#e9d9b9;
 
   font-family:"Cinzel",serif;
@@ -243,8 +222,7 @@ nav a:hover{
   letter-spacing:3px;
   line-height:1.5;
 
-  text-shadow:
-    0 3px 18px rgba(0,0,0,0.65);
+  text-shadow:0 3px 18px rgba(0,0,0,0.65);
 }
 
 .storybook-cover h1 span{
@@ -254,21 +232,18 @@ nav a:hover{
 .cover-divider{
   width:145px;
   height:1px;
-
   margin:32px auto;
 
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      #c4a46d,
-      transparent
-    );
+  background:linear-gradient(
+    90deg,
+    transparent,
+    #c4a46d,
+    transparent
+  );
 }
 
 .gathering-subtitle{
   margin:0;
-
   color:#c4a46d;
 
   font-family:"Cinzel",serif;
@@ -278,7 +253,6 @@ nav a:hover{
 
 .cover-quote{
   margin:65px 0 0;
-
   color:rgba(233,217,185,0.75);
 
   font-family:"Cinzel",serif;
@@ -291,7 +265,6 @@ nav a:hover{
 
 .cover-bottom-ornament{
   margin-top:35px;
-
   color:#b8945c;
   font-size:17px;
   letter-spacing:8px;
@@ -303,7 +276,6 @@ nav a:hover{
 
 .storybook-pages{
   position:relative;
-
   padding:80px 65px 90px;
 
   color:#443426;
@@ -322,58 +294,46 @@ nav a:hover{
       #d5bd96 100%
     );
 
-  border-left:
-    1px solid #9b784a;
-
-  border-right:
-    1px solid #9b784a;
-
-  border-bottom:
-    1px solid #9b784a;
+  border-left:1px solid #9b784a;
+  border-right:1px solid #9b784a;
+  border-bottom:1px solid #9b784a;
 }
 
 .storybook-pages::before{
   content:"";
-
   position:absolute;
   inset:22px;
 
-  border:
-    1px solid rgba(105,75,42,0.3);
-
+  border:1px solid rgba(105,75,42,0.3);
   pointer-events:none;
 }
-
-/* =========================
-   共同章節樣式
-========================= */
 
 .storybook-pages section{
   position:relative;
   z-index:1;
 }
 
+/* =========================
+   共同章節樣式
+========================= */
+
 .chapter-label{
   margin:0 0 16px;
-
   color:#8d6840;
 
   font-family:"Cinzel",serif;
   font-size:12px;
   font-weight:600;
-
   letter-spacing:4px;
   text-align:center;
 }
 
 .storybook-pages h2{
   margin:0;
-
   color:#493421;
 
   font-size:clamp(23px,3vw,34px);
   font-weight:600;
-
   letter-spacing:4px;
   line-height:1.6;
   text-align:center;
@@ -386,28 +346,25 @@ nav a:hover{
   gap:18px;
 
   margin:25px auto 45px;
-
   color:#99744a;
   font-size:16px;
 }
 
 .chapter-divider span{
   display:block;
-
   width:75px;
   height:1px;
 
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      rgba(126,89,49,0.65),
-      transparent
-    );
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(126,89,49,0.65),
+    transparent
+  );
 }
 
 /* =========================
-   活動故事序言
+   活動序言
 ========================= */
 
 .story-introduction{
@@ -420,7 +377,6 @@ nav a:hover{
   margin:auto;
 
   color:#54412e;
-
   font-size:15px;
   line-height:2.8;
   letter-spacing:1.5px;
@@ -442,13 +398,10 @@ nav a:hover{
 .hero-photo{
   max-width:850px;
   margin:auto;
-
   padding:12px;
 
   background:#f2e5c9;
-
-  border:
-    1px solid rgba(112,79,43,0.55);
+  border:1px solid rgba(112,79,43,0.55);
 
   box-shadow:
     0 8px 30px rgba(70,47,26,0.23),
@@ -463,7 +416,6 @@ nav a:hover{
 
 .photo-caption{
   margin:22px 0 0;
-
   color:#745638;
 
   font-family:"Cinzel",serif;
@@ -479,7 +431,7 @@ nav a:hover{
 }
 
 /* =========================
-   魔法影像紀事
+   Instagram 影片區
 ========================= */
 
 .videos-section{
@@ -509,11 +461,9 @@ nav a:hover{
   padding:20px 15px 25px;
 
   background:rgba(255,249,230,0.35);
-
   border:1px solid rgba(114,79,40,0.4);
 
-  box-shadow:
-    0 8px 25px rgba(70,47,26,0.12);
+  box-shadow:0 8px 25px rgba(70,47,26,0.12);
 }
 
 .video-heading{
@@ -537,8 +487,8 @@ nav a:hover{
 
 .video-heading h3{
   margin:0 0 8px;
-
   color:#493421;
+
   font-family:"Cinzel",serif;
   font-size:17px;
   font-weight:500;
@@ -579,15 +529,13 @@ nav a:hover{
 
   color:#d8c39a;
 
-  background:
-    radial-gradient(
-      ellipse at center,
-      #263650,
-      #101b2e 75%
-    );
+  background:radial-gradient(
+    ellipse at center,
+    #263650,
+    #101b2e 75%
+  );
 
   border:1px solid rgba(184,148,92,0.55);
-
   outline:1px solid rgba(184,148,92,0.25);
   outline-offset:-9px;
 }
@@ -606,6 +554,7 @@ nav a:hover{
 
 .placeholder-text{
   color:rgba(233,217,185,0.65);
+
   font-family:"Cinzel",serif;
   font-size:11px;
   font-style:italic;
@@ -614,7 +563,6 @@ nav a:hover{
 
 .instagram-link{
   display:inline-block;
-
   margin-top:20px;
   padding:10px 18px;
 
@@ -626,7 +574,6 @@ nav a:hover{
   letter-spacing:1px;
 
   border:1px solid rgba(114,79,40,0.45);
-
   transition:.3s ease;
 }
 
@@ -655,7 +602,6 @@ nav a:hover{
 
   display:grid;
   grid-template-columns:repeat(4,minmax(0,1fr));
-
   gap:18px;
 }
 
@@ -664,12 +610,9 @@ nav a:hover{
   padding:7px;
 
   background:#f5e8cb;
+  border:1px solid rgba(111,77,42,0.45);
 
-  border:
-    1px solid rgba(111,77,42,0.45);
-
-  box-shadow:
-    0 5px 16px rgba(72,49,25,0.18);
+  box-shadow:0 5px 16px rgba(72,49,25,0.18);
 
   transition:
     transform .35s ease,
@@ -686,8 +629,7 @@ nav a:hover{
 .memory-photo:hover{
   transform:translateY(-6px);
 
-  box-shadow:
-    0 12px 28px rgba(72,49,25,0.3);
+  box-shadow:0 12px 28px rgba(72,49,25,0.3);
 }
 
 /* =========================
@@ -702,28 +644,23 @@ nav a:hover{
 .chronicle-list{
   display:flex;
   flex-direction:column;
-  gap:0;
 }
 
 .chronicle-entry{
   display:flex;
   align-items:center;
-
   gap:28px;
   padding:22px 15px;
 
-  border-bottom:
-    1px solid rgba(111,77,42,0.22);
+  border-bottom:1px solid rgba(111,77,42,0.22);
 }
 
 .chronicle-entry:first-child{
-  border-top:
-    1px solid rgba(111,77,42,0.22);
+  border-top:1px solid rgba(111,77,42,0.22);
 }
 
 .chronicle-number{
   flex:0 0 52px;
-
   width:52px;
   height:52px;
 
@@ -731,37 +668,29 @@ nav a:hover{
   align-items:center;
   justify-content:center;
 
-  border:
-    1px solid rgba(131,94,52,0.55);
-
+  border:1px solid rgba(131,94,52,0.55);
   border-radius:50%;
 
   color:#805a32;
-
   font-family:"Cinzel",serif;
   font-size:19px;
 
-  background:
-    rgba(255,248,222,0.35);
+  background:rgba(255,248,222,0.35);
 }
 
 .chronicle-text h3{
   margin:0 0 7px;
-
   color:#513a25;
 
   font-family:"Cinzel",serif;
   font-size:17px;
   font-weight:500;
-
   letter-spacing:1px;
 }
 
 .chronicle-text p{
   margin:0;
-
   color:#826346;
-
   font-size:13px;
   letter-spacing:2px;
 }
@@ -774,14 +703,10 @@ nav a:hover{
   margin:0 auto 90px;
   padding:55px 35px;
 
-  border:
-    1px solid rgba(114,79,40,0.45);
+  border:1px solid rgba(114,79,40,0.45);
+  background:rgba(255,249,230,0.3);
 
-  background:
-    rgba(255,249,230,0.3);
-
-  box-shadow:
-    inset 0 0 35px rgba(124,87,45,0.08);
+  box-shadow:inset 0 0 35px rgba(124,87,45,0.08);
 }
 
 .attendees-box h2{
@@ -792,12 +717,10 @@ nav a:hover{
 
 .attendees-subtitle{
   margin:15px 0 0;
-
   color:#8c6942;
 
   font-family:"Cinzel",serif;
   font-size:12px;
-
   letter-spacing:2px;
   text-align:center;
 }
@@ -814,29 +737,22 @@ nav a:hover{
   padding:11px 18px;
 
   color:#62482f;
-
   text-align:center;
   font-size:14px;
 
-  background:
-    rgba(255,250,235,0.4);
-
-  border:
-    1px solid rgba(120,84,45,0.35);
+  background:rgba(255,250,235,0.4);
+  border:1px solid rgba(120,84,45,0.35);
 
   transition:.3s ease;
 }
 
 .attendee-list span:hover{
   color:#382817;
-
-  background:
-    rgba(255,250,235,0.75);
+  background:rgba(255,250,235,0.75);
 
   transform:translateY(-3px);
 
-  box-shadow:
-    0 5px 15px rgba(100,70,35,0.15);
+  box-shadow:0 5px 15px rgba(100,70,35,0.15);
 }
 
 /* =========================
@@ -846,7 +762,6 @@ nav a:hover{
 .storybook-ending{
   position:relative;
   z-index:1;
-
   padding:35px 15px 10px;
   text-align:center;
 }
@@ -859,13 +774,11 @@ nav a:hover{
 
 .ending-quote{
   margin:28px 0;
-
   color:#61472f;
 
   font-family:"Cinzel",serif;
   font-size:14px;
   font-style:italic;
-
   letter-spacing:1px;
   line-height:2.4;
 }
@@ -876,7 +789,6 @@ nav a:hover{
 
 .ending-signature{
   margin-top:35px;
-
   color:#99744a;
 
   font-family:"Cinzel",serif;
@@ -885,7 +797,7 @@ nav a:hover{
 }
 
 /* =========================
-   圖片保護
+   圖片基本保護
 ========================= */
 
 img{
@@ -895,6 +807,7 @@ img{
 
 /* =========================
    照片放大燈箱
+   手機穩定性修正版
 ========================= */
 
 .hero-photo img,
@@ -908,70 +821,98 @@ img{
   z-index:9999;
 
   display:none;
+  visibility:hidden;
+  pointer-events:none;
+
   align-items:center;
   justify-content:center;
 
-  background:rgba(3,7,15,0.94);
-  backdrop-filter:blur(10px);
+  background:rgba(3,7,15,0.96);
+
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
 }
 
 .photo-lightbox.active{
   display:flex;
+  visibility:visible;
+  pointer-events:auto;
 }
 
 .photo-lightbox img{
   max-width:85vw;
-  max-height:85vh;
+  max-height:80vh;
 
   width:auto;
   height:auto;
   object-fit:contain;
 
+  pointer-events:none;
+
   border:2px solid #b8945c;
 
-  box-shadow:
-    0 0 50px rgba(184,148,92,0.22);
+  box-shadow:0 0 35px rgba(184,148,92,0.18);
 }
 
 .lightbox-close,
 .lightbox-prev,
 .lightbox-next{
   position:absolute;
-  z-index:2;
-
   border:none;
-  background:none;
 
   color:#d8c39a;
   cursor:pointer;
 
-  transition:.3s;
+  touch-action:manipulation;
 }
 
 .lightbox-close{
-  top:20px;
-  right:30px;
-  font-size:42px;
+  top:15px;
+  right:15px;
+  z-index:10001;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  width:50px;
+  height:50px;
+  padding:0;
+
+  background:rgba(16,27,46,0.8);
+  border-radius:50%;
+
+  color:#e9d9b9;
+  font-size:36px;
+}
+
+.lightbox-prev,
+.lightbox-next{
+  top:50%;
+  z-index:10000;
+
+  width:48px;
+  height:55px;
+
+  background:rgba(16,27,46,0.55);
+  font-size:36px;
+
+  transform:translateY(-50%);
 }
 
 .lightbox-prev{
-  left:25px;
-  top:50%;
-  transform:translateY(-50%);
-  font-size:40px;
+  left:15px;
 }
 
 .lightbox-next{
-  right:25px;
-  top:50%;
-  transform:translateY(-50%);
-  font-size:40px;
+  right:15px;
 }
 
 .lightbox-close:hover,
 .lightbox-prev:hover,
 .lightbox-next:hover{
   color:white;
+  background:rgba(38,54,80,0.9);
 }
 
 .lightbox-counter{
@@ -983,14 +924,15 @@ img{
   font-family:"Cinzel",serif;
   font-size:13px;
   letter-spacing:3px;
+
+  pointer-events:none;
 }
 
 /* =========================
-   平板與手機版
-   保留側邊欄切換
+   平板版
 ========================= */
 
-@media (max-width:1000px){
+@media(max-width:1000px){
 
   .page{
     flex-direction:column;
@@ -1001,9 +943,7 @@ img{
     min-height:auto;
 
     border-right:none;
-
-    border-bottom:
-      1px solid rgba(184,148,92,0.2);
+    border-bottom:1px solid rgba(184,148,92,0.2);
   }
 
   nav{
@@ -1026,17 +966,17 @@ img{
   }
 
   .photo-grid{
-    grid-template-columns:
-      repeat(2,minmax(0,1fr));
+    grid-template-columns:repeat(2,minmax(0,1fr));
   }
 
   .attendee-list{
     justify-content:center;
   }
+
 }
 
 /* =========================
-   Instagram 影片響應式排列
+   Instagram 影片響應式
 ========================= */
 
 @media(max-width:1100px){
@@ -1054,10 +994,10 @@ img{
 }
 
 /* =========================
-   小尺寸手機
+   手機版
 ========================= */
 
-@media (max-width:600px){
+@media(max-width:600px){
 
   .content{
     padding:25px 12px;
@@ -1209,14 +1149,18 @@ img{
 
   .photo-lightbox img{
     max-width:94vw;
-    max-height:72vh;
+    max-height:70vh;
+  }
+
+  .lightbox-close{
+    top:12px;
+    right:12px;
   }
 
   .lightbox-prev,
   .lightbox-next{
     top:auto;
     bottom:35px;
-    transform:none;
 
     width:45px;
     height:45px;
@@ -1225,10 +1169,13 @@ img{
     align-items:center;
     justify-content:center;
 
-    background:rgba(16,27,46,0.65);
-    border:1px solid rgba(184,148,92,0.35);
+    transform:none;
 
+    background:rgba(16,27,46,0.75);
+    border:1px solid rgba(184,148,92,0.35);
     border-radius:50%;
+
+    font-size:28px;
   }
 
   .lightbox-prev{
@@ -1239,11 +1186,6 @@ img{
     right:20px;
   }
 
-  .lightbox-close{
-    right:15px;
-    top:12px;
-  }
-
   .lightbox-counter{
     bottom:48px;
   }
@@ -1251,10 +1193,10 @@ img{
 }
 
 /* =========================
-   減少動態效果偏好
+   減少動態效果
 ========================= */
 
-@media (prefers-reduced-motion:reduce){
+@media(prefers-reduced-motion:reduce){
 
   *,
   *::before,

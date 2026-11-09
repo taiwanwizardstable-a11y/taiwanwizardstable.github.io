@@ -1,7 +1,7 @@
 
 /* =====================================
    TWT HOUSE CUP
-   Magical Crystal Collection
+   Slow Magical Crystal Collection
 ===================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -18,45 +18,124 @@ document.addEventListener("DOMContentLoaded", function () {
     "(prefers-reduced-motion: reduce)"
   ).matches;
 
-  const palettes = {
-    gryffindor: ["#8e171d", "#d43c42", "#f47778", "#ffb4a0"],
-    slytherin: ["#075c46", "#13976e", "#43d9a0", "#b2ffe0"],
-    ravenclaw: ["#123b91", "#2873dc", "#65a7ff", "#c0dcff"],
-    hufflepuff: ["#98600a", "#dca521", "#ffd34f", "#fff0a0"]
+  /* =====================================
+     動畫設定
+     以後可以自行調整
+  ===================================== */
+
+  const SETTINGS = {
+
+    // 寶石累積時間：毫秒
+    // 18000 = 18秒
+    fillDuration: 18000,
+
+    // 第一顆寶石開始掉落的延遲
+    startDelay: 500,
+
+    // 單顆寶石落下時間
+    fallDurationMin: 1200,
+    fallDurationMax: 2100,
+
+    // 最大填充比例
+    // 0.55 = 展示櫃高度的55%
+    maxFillRatio: 0.55,
+
+    // 每顆寶石代表多少積分
+    pointsPerGem: 35,
+
+    // 寶石落下後的微光動畫
+    enableAmbientGlow: true
+
   };
 
-  /* 可重現的隨機排列 */
+  /* =====================================
+     四學院寶石顏色
+  ===================================== */
+
+  const palettes = {
+
+    gryffindor: [
+      "#8e171d",
+      "#d43c42",
+      "#f47778",
+      "#ffb4a0"
+    ],
+
+    slytherin: [
+      "#075c46",
+      "#13976e",
+      "#43d9a0",
+      "#b2ffe0"
+    ],
+
+    ravenclaw: [
+      "#123b91",
+      "#2873dc",
+      "#65a7ff",
+      "#c0dcff"
+    ],
+
+    hufflepuff: [
+      "#98600a",
+      "#dca521",
+      "#ffd34f",
+      "#fff0a0"
+    ]
+
+  };
+
+  /* =====================================
+     固定隨機數
+  ===================================== */
 
   function seededRandom(seed) {
+
     let value = seed >>> 0;
 
     return function () {
-      value = (value * 1664525 + 1013904223) >>> 0;
+
+      value = (
+        value * 1664525 + 1013904223
+      ) >>> 0;
+
       return value / 4294967296;
+
     };
+
   }
 
-  /* 分數動畫 */
+  /* =====================================
+     分數緩慢增加
+  ===================================== */
 
-  function animateScore(element, target, duration) {
+  function animateScore(element, target) {
 
     if (reduceMotion) {
       element.textContent = target;
       return;
     }
 
-    const start = performance.now();
+    const start = performance.now()
+      + SETTINGS.startDelay;
 
     function update(now) {
 
+      if (now < start) {
+        requestAnimationFrame(update);
+        return;
+      }
+
       const progress = Math.min(
-        (now - start) / duration,
+        (now - start) / SETTINGS.fillDuration,
         1
       );
 
-      const eased = 1 - Math.pow(1 - progress, 3);
+      const eased =
+        1 - Math.pow(1 - progress, 2);
 
-      element.textContent = Math.round(target * eased);
+      element.textContent = Math.round(
+        target * eased
+      );
 
       if (progress < 1) {
         requestAnimationFrame(update);
@@ -67,9 +146,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     requestAnimationFrame(update);
+
   }
 
-  /* 生成單顆寶石 */
+  /* =====================================
+     建立單顆立體寶石
+  ===================================== */
 
   function createGem(random, colors, index) {
 
@@ -77,11 +159,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     gem.className = "magic-gem";
 
-    const size = 9 + random() * 7;
-    const rotation = -40 + random() * 80;
+    const size = 9 + random() * 6;
 
-    gem.style.setProperty("--gem-size", size + "px");
-    gem.style.setProperty("--gem-rotation", rotation + "deg");
+    const rotation = -35 + random() * 70;
+
+    gem.style.setProperty(
+      "--gem-size",
+      size + "px"
+    );
+
+    gem.style.setProperty(
+      "--gem-rotation",
+      rotation + "deg"
+    );
 
     gem.style.setProperty(
       "--gem-dark",
@@ -105,32 +195,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
     gem.style.setProperty(
       "--twinkle-delay",
-      (random() * -7).toFixed(2) + "s"
+      (-random() * 9).toFixed(2) + "s"
     );
 
     gem.style.setProperty(
       "--twinkle-duration",
-      (3 + random() * 5).toFixed(2) + "s"
+      (4 + random() * 7).toFixed(2) + "s"
     );
 
     gem.style.zIndex = index;
 
     return gem;
+
   }
 
-  /* 寶石堆積 */
+  /* =====================================
+     建立寶石堆
+  ===================================== */
 
   function buildGemPile(card, finalScore, index) {
 
-    const glass = card.querySelector(".gem-glass");
-    const pile = card.querySelector(".gem-pile");
+    const glass = card.querySelector(
+      ".gem-glass"
+    );
+
+    const pile = card.querySelector(
+      ".gem-pile"
+    );
 
     if (!glass || !pile) return;
 
     pile.innerHTML = "";
 
     const house = card.dataset.house;
-    const colors = palettes[house] || palettes.ravenclaw;
+
+    const colors =
+      palettes[house] || palettes.ravenclaw;
 
     const random = seededRandom(
       2026 + index * 173 + finalScore
@@ -138,16 +238,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const glassHeight = glass.clientHeight;
 
-    const maxHeight = Math.max(
-      40,
-      Math.min(180, glassHeight - 35)
-    );
-
     const targetHeight = finalScore <= 0
       ? 0
       : Math.max(
-          22,
-          (finalScore / maxScore) * maxHeight
+          12,
+          (finalScore / maxScore) *
+          glassHeight *
+          SETTINGS.maxFillRatio
         );
 
     pile.style.height = targetHeight + "px";
@@ -158,21 +255,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const columns = Math.max(
       5,
-      Math.floor(pileWidth / 13)
+      Math.floor(pileWidth / 14)
     );
 
-    const rowHeight = 10;
+    const rowHeight = 12;
+
     const rows = Math.max(
       1,
-      Math.floor(targetHeight / rowHeight)
+      Math.ceil(targetHeight / rowHeight)
+    );
+
+    const maxGems = Math.max(
+      1,
+      Math.ceil(
+        finalScore / SETTINGS.pointsPerGem
+      )
     );
 
     const totalGems = Math.min(
-      180,
-      Math.ceil(rows * columns * 0.88)
+      maxGems,
+      columns * rows
     );
 
     const gems = [];
+
+    /* =====================================
+       計算每顆寶石的位置
+    ===================================== */
 
     for (let i = 0; i < totalGems; i++) {
 
@@ -182,17 +291,25 @@ document.addEventListener("DOMContentLoaded", function () {
         i
       );
 
-      const row = Math.floor(i / columns);
+      const row = Math.floor(
+        i / columns
+      );
+
       const column = i % columns;
 
-      const stagger = row % 2 ? 0.5 : 0;
+      const stagger =
+        row % 2 ? 0.5 : 0;
 
       const x = (
-        (column + stagger + 0.5) / columns
+        (column + stagger + 0.5) /
+        columns
       ) * pileWidth;
 
-      const jitterX = (random() - 0.5) * 6;
-      const jitterY = (random() - 0.5) * 5;
+      const jitterX =
+        (random() - 0.5) * 5;
+
+      const jitterY =
+        (random() - 0.5) * 3;
 
       const bottom = Math.min(
         targetHeight - 8,
@@ -201,7 +318,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
       gem.style.left = Math.max(
         3,
-        Math.min(pileWidth - 8, x + jitterX)
+        Math.min(
+          pileWidth - 8,
+          x + jitterX
+        )
       ) + "px";
 
       gem.style.bottom = Math.max(
@@ -209,77 +329,120 @@ document.addEventListener("DOMContentLoaded", function () {
         bottom
       ) + "px";
 
-      const duration = 650 + random() * 650;
-
-      const delay = (
-        i / totalGems
-      ) * 1700 + random() * 120;
-
-      gems.push({
-        element: gem,
-        duration,
-        delay,
-        rotation: gem.style.getPropertyValue(
-          "--gem-rotation"
-        )
-      });
-
       pile.appendChild(gem);
+
+      gems.push(gem);
+
     }
+
+    /* =====================================
+       減少動畫設定
+    ===================================== */
 
     if (reduceMotion) return;
 
-    /* 寶石從上方落下 */
+    /* =====================================
+       寶石緩慢掉落
+    ===================================== */
 
-    gems.forEach(item => {
+    gems.forEach(function (gem, i) {
 
-      const gem = item.element;
+      const progress =
+        gems.length <= 1
+          ? 0
+          : i / (gems.length - 1);
+
+      const delay =
+        SETTINGS.startDelay +
+        progress * SETTINGS.fillDuration;
+
+      const duration =
+        SETTINGS.fallDurationMin +
+        random() * (
+          SETTINGS.fallDurationMax -
+          SETTINGS.fallDurationMin
+        );
 
       const fallDistance =
-        glassHeight - parseFloat(gem.style.bottom) + 25;
+        glassHeight -
+        parseFloat(gem.style.bottom) +
+        30;
 
       gem.animate(
         [
           {
             transform:
-              `translateY(${-fallDistance}px) rotate(-95deg) scale(0.85)`,
-            opacity: 0
+              `translateY(${-fallDistance}px) rotate(-90deg) scale(0.8)`,
+            opacity:0
           },
           {
-            offset: 0.12,
-            opacity: 1
+            offset:0.12,
+            opacity:1
           },
           {
-            offset: 0.78,
+            offset:0.8,
             transform:
-              "translateY(5px) rotate(12deg) scale(1.04)",
-            opacity: 1
+              "translateY(4px) rotate(10deg) scale(1.04)",
+            opacity:1
           },
           {
-            offset: 0.9,
+            offset:0.92,
             transform:
-              "translateY(-4px) rotate(-5deg) scale(0.98)",
-            opacity: 1
+              "translateY(-3px) rotate(-4deg) scale(0.98)",
+            opacity:1
           },
           {
             transform:
               "translateY(0) rotate(0deg) scale(1)",
-            opacity: 1
+            opacity:1
           }
         ],
         {
-          duration: item.duration,
-          delay: 250 + item.delay,
-          easing: "cubic-bezier(.24,.65,.35,1)",
-          fill: "backwards"
+          duration:duration,
+          delay:delay,
+          easing:
+            "cubic-bezier(.25,.65,.35,1)",
+          fill:"backwards"
         }
       );
+
+      /* =====================================
+         寶石落地後持續微光
+      ===================================== */
+
+      if (SETTINGS.enableAmbientGlow) {
+
+        gem.animate(
+          [
+            {
+              filter:"brightness(1)"
+            },
+            {
+              filter:"brightness(1.22)"
+            },
+            {
+              filter:"brightness(1)"
+            }
+          ],
+          {
+            duration:
+              4500 + random() * 4500,
+            delay:
+              delay + duration,
+            iterations:Infinity,
+            easing:"ease-in-out"
+          }
+        );
+
+      }
 
     });
 
   }
 
-  /* 四學院初始化 */
+  /* =====================================
+     初始化四學院
+  ===================================== */
 
   houseCards.forEach(function (card, index) {
 
@@ -292,14 +455,19 @@ document.addEventListener("DOMContentLoaded", function () {
       ".score-number"
     );
 
-    buildGemPile(card, finalScore, index);
+    buildGemPile(
+      card,
+      finalScore,
+      index
+    );
 
     if (scoreNumber) {
+
       animateScore(
         scoreNumber,
-        finalScore,
-        2300
+        finalScore
       );
+
     }
 
   });

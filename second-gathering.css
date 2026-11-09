@@ -38,7 +38,7 @@ body{
 
 /* =========================
    左側欄位
-   完整保留第一屆
+   保留第一屆設計
 ========================= */
 
 .sidebar{
@@ -156,8 +156,6 @@ nav a:hover{
   color:#e9d9b9;
 }
 
-/* 封面內側金線 */
-
 .storybook-cover::before{
   content:"";
 
@@ -170,8 +168,6 @@ nav a:hover{
   pointer-events:none;
 }
 
-/* 封面第二層細線 */
-
 .storybook-cover::after{
   content:"";
 
@@ -183,8 +179,6 @@ nav a:hover{
 
   pointer-events:none;
 }
-
-/* 封面上方裝飾 */
 
 .cover-ornament{
   display:flex;
@@ -215,8 +209,6 @@ nav a:hover{
   font-size:21px;
 }
 
-/* 品牌小標 */
-
 .small-title{
   margin:0 0 30px;
 
@@ -229,8 +221,6 @@ nav a:hover{
   text-transform:uppercase;
 }
 
-/* 屆次 */
-
 .edition-label{
   margin:0 0 18px;
 
@@ -240,8 +230,6 @@ nav a:hover{
   font-size:13px;
   letter-spacing:5px;
 }
-
-/* 主標題 */
 
 .storybook-cover h1{
   margin:0;
@@ -263,8 +251,6 @@ nav a:hover{
   display:block;
 }
 
-/* 標題下方線條 */
-
 .cover-divider{
   width:145px;
   height:1px;
@@ -280,8 +266,6 @@ nav a:hover{
     );
 }
 
-/* 日期 */
-
 .gathering-subtitle{
   margin:0;
 
@@ -291,8 +275,6 @@ nav a:hover{
   font-size:13px;
   letter-spacing:4px;
 }
-
-/* 封面銘文 */
 
 .cover-quote{
   margin:65px 0 0;
@@ -350,8 +332,6 @@ nav a:hover{
     1px solid #9b784a;
 }
 
-/* 羊皮紙內側邊框 */
-
 .storybook-pages::before{
   content:"";
 
@@ -398,8 +378,6 @@ nav a:hover{
   line-height:1.6;
   text-align:center;
 }
-
-/* 章節分隔裝飾 */
 
 .chapter-divider{
   display:flex;
@@ -501,6 +479,169 @@ nav a:hover{
 }
 
 /* =========================
+   魔法影像紀事
+========================= */
+
+.videos-section{
+  position:relative;
+  z-index:1;
+  margin:0 auto 110px;
+  text-align:center;
+}
+
+.videos-intro{
+  margin:0 auto 45px;
+  color:#745638;
+  font-size:14px;
+  line-height:2.5;
+  letter-spacing:1px;
+}
+
+.video-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:25px;
+  align-items:start;
+}
+
+.video-card{
+  min-width:0;
+  padding:20px 15px 25px;
+
+  background:rgba(255,249,230,0.35);
+
+  border:1px solid rgba(114,79,40,0.4);
+
+  box-shadow:
+    0 8px 25px rgba(70,47,26,0.12);
+}
+
+.video-heading{
+  min-height:100px;
+  padding:10px 0 20px;
+}
+
+.video-number{
+  display:block;
+  margin-bottom:12px;
+
+  color:#9a754b;
+  font-family:"Cinzel",serif;
+  font-size:11px;
+  letter-spacing:3px;
+}
+
+.video-number:empty{
+  display:none;
+}
+
+.video-heading h3{
+  margin:0 0 8px;
+
+  color:#493421;
+  font-family:"Cinzel",serif;
+  font-size:17px;
+  font-weight:500;
+  letter-spacing:1px;
+}
+
+.video-heading p{
+  margin:0;
+  color:#806044;
+  font-size:13px;
+  letter-spacing:2px;
+}
+
+.video-heading p:empty{
+  display:none;
+}
+
+.instagram-embed{
+  width:100%;
+  min-width:0;
+  overflow:hidden;
+}
+
+.instagram-embed .instagram-media{
+  margin:0 auto !important;
+  max-width:540px !important;
+}
+
+.video-placeholder{
+  min-height:420px;
+  padding:25px 12px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:20px;
+
+  color:#d8c39a;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      #263650,
+      #101b2e 75%
+    );
+
+  border:1px solid rgba(184,148,92,0.55);
+
+  outline:1px solid rgba(184,148,92,0.25);
+  outline-offset:-9px;
+}
+
+.placeholder-symbol{
+  color:#c4a46d;
+  font-size:35px;
+}
+
+.placeholder-title{
+  font-family:"Cinzel",serif;
+  font-size:14px;
+  letter-spacing:2px;
+  line-height:1.8;
+}
+
+.placeholder-text{
+  color:rgba(233,217,185,0.65);
+  font-family:"Cinzel",serif;
+  font-size:11px;
+  font-style:italic;
+  letter-spacing:1px;
+}
+
+.instagram-link{
+  display:inline-block;
+
+  margin-top:20px;
+  padding:10px 18px;
+
+  color:#6b4d30;
+  text-decoration:none;
+
+  font-family:"Cinzel",serif;
+  font-size:11px;
+  letter-spacing:1px;
+
+  border:1px solid rgba(114,79,40,0.45);
+
+  transition:.3s ease;
+}
+
+.instagram-link:hover{
+  color:#fff3d8;
+  background:#6b4d30;
+}
+
+.video-placeholder[hidden],
+.instagram-embed[hidden],
+.instagram-link[hidden]{
+  display:none !important;
+}
+
+/* =========================
    魔法照片牆
 ========================= */
 
@@ -555,7 +696,6 @@ nav a:hover{
 
 .chronicle-section{
   max-width:800px;
-
   margin:0 auto 110px;
 }
 
@@ -632,7 +772,6 @@ nav a:hover{
 
 .attendees-box{
   margin:0 auto 90px;
-
   padding:55px 35px;
 
   border:
@@ -667,13 +806,11 @@ nav a:hover{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
-
   gap:14px;
 }
 
 .attendee-list span{
   min-width:120px;
-
   padding:11px 18px;
 
   color:#62482f;
@@ -711,7 +848,6 @@ nav a:hover{
   z-index:1;
 
   padding:35px 15px 10px;
-
   text-align:center;
 }
 
@@ -758,203 +894,7 @@ img{
 }
 
 /* =========================
-   平板與手機版
-   保留第一屆側邊欄切換
-========================= */
-
-@media (max-width:1000px){
-
-  .page{
-    flex-direction:column;
-  }
-
-  .sidebar{
-    width:100%;
-    min-height:auto;
-
-    border-right:none;
-
-    border-bottom:
-      1px solid rgba(184,148,92,0.2);
-  }
-
-  nav{
-    flex-direction:row;
-    flex-wrap:wrap;
-    justify-content:center;
-  }
-
-  .content{
-    padding:40px 24px;
-  }
-
-  .storybook-cover{
-    min-height:520px;
-    padding:85px 35px;
-  }
-
-  .storybook-pages{
-    padding:65px 40px 75px;
-  }
-
-  .photo-grid{
-    grid-template-columns:
-      repeat(2,minmax(0,1fr));
-  }
-
-  .attendee-list{
-    justify-content:center;
-  }
-}
-
-/* =========================
-   小尺寸手機
-========================= */
-
-@media (max-width:600px){
-
-  .content{
-    padding:25px 12px;
-  }
-
-  .storybook-cover{
-    min-height:450px;
-    padding:80px 30px;
-  }
-
-  .storybook-cover::before{
-    inset:12px;
-  }
-
-  .storybook-cover::after{
-    inset:18px;
-  }
-
-  .storybook-cover h1{
-    font-size:29px;
-    letter-spacing:1px;
-  }
-
-  .small-title{
-    font-size:10px;
-    letter-spacing:3px;
-  }
-
-  .edition-label{
-    font-size:11px;
-    letter-spacing:2px;
-  }
-
-  .gathering-subtitle{
-    font-size:11px;
-    letter-spacing:2px;
-  }
-
-  .cover-quote{
-    margin-top:45px;
-    font-size:11px;
-  }
-
-  .storybook-pages{
-    padding:55px 25px 65px;
-  }
-
-  .storybook-pages::before{
-    inset:12px;
-  }
-
-  .story-text{
-    font-size:13px;
-    line-height:2.5;
-    letter-spacing:1px;
-  }
-
-  .storybook-pages h2{
-    font-size:23px;
-    letter-spacing:2px;
-  }
-
-  .chapter-label{
-    font-size:10px;
-    letter-spacing:2px;
-  }
-
-  .hero-section{
-    margin-bottom:75px;
-  }
-
-  .memories-section{
-    margin-bottom:80px;
-  }
-
-  .photo-grid{
-    gap:10px;
-  }
-
-  .memory-photo{
-    padding:4px;
-  }
-
-  .chronicle-section{
-    margin-bottom:80px;
-  }
-
-  .chronicle-entry{
-    gap:15px;
-    padding:18px 5px;
-  }
-
-  .chronicle-number{
-    flex-basis:42px;
-    width:42px;
-    height:42px;
-    font-size:16px;
-  }
-
-  .chronicle-text h3{
-    font-size:14px;
-  }
-
-  .attendees-box{
-    padding:35px 15px;
-  }
-
-  .attendees-box h2{
-    font-size:23px;
-  }
-
-  .attendee-list{
-    gap:9px;
-  }
-
-  .attendee-list span{
-    min-width:0;
-    padding:9px 12px;
-    font-size:12px;
-  }
-
-  .ending-quote{
-    font-size:11px;
-    line-height:2.2;
-  }
-}
-
-/* =========================
-   減少動態效果偏好
-========================= */
-
-@media (prefers-reduced-motion:reduce){
-
-  *,
-  *::before,
-  *::after{
-    scroll-behavior:auto;
-    transition:none !important;
-  }
-}
-
-/* =========================
-   TWT 照片放大燈箱
+   照片放大燈箱
 ========================= */
 
 .hero-photo img,
@@ -1045,21 +985,258 @@ img{
   letter-spacing:3px;
 }
 
-@media(max-width:600px){
+/* =========================
+   平板與手機版
+   保留側邊欄切換
+========================= */
+
+@media (max-width:1000px){
+
+  .page{
+    flex-direction:column;
+  }
+
+  .sidebar{
+    width:100%;
+    min-height:auto;
+
+    border-right:none;
+
+    border-bottom:
+      1px solid rgba(184,148,92,0.2);
+  }
+
+  nav{
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .content{
+    padding:40px 24px;
+  }
+
+  .storybook-cover{
+    min-height:520px;
+    padding:85px 35px;
+  }
+
+  .storybook-pages{
+    padding:65px 40px 75px;
+  }
+
+  .photo-grid{
+    grid-template-columns:
+      repeat(2,minmax(0,1fr));
+  }
+
+  .attendee-list{
+    justify-content:center;
+  }
+}
+
+/* =========================
+   Instagram 影片響應式排列
+========================= */
+
+@media(max-width:1100px){
+
+  .video-grid{
+    grid-template-columns:1fr;
+  }
+
+  .video-card{
+    width:100%;
+    max-width:440px;
+    margin:0 auto;
+  }
+
+}
+
+/* =========================
+   小尺寸手機
+========================= */
+
+@media (max-width:600px){
+
+  .content{
+    padding:25px 12px;
+  }
+
+  .storybook-cover{
+    min-height:450px;
+    padding:80px 30px;
+  }
+
+  .storybook-cover::before{
+    inset:12px;
+  }
+
+  .storybook-cover::after{
+    inset:18px;
+  }
+
+  .storybook-cover h1{
+    font-size:29px;
+    letter-spacing:1px;
+  }
+
+  .small-title{
+    font-size:10px;
+    letter-spacing:3px;
+  }
+
+  .edition-label{
+    font-size:11px;
+    letter-spacing:2px;
+  }
+
+  .gathering-subtitle{
+    font-size:11px;
+    letter-spacing:2px;
+  }
+
+  .cover-quote{
+    margin-top:45px;
+    font-size:11px;
+  }
+
+  .storybook-pages{
+    padding:55px 25px 65px;
+  }
+
+  .storybook-pages::before{
+    inset:12px;
+  }
+
+  .story-text{
+    font-size:13px;
+    line-height:2.5;
+    letter-spacing:1px;
+  }
+
+  .storybook-pages h2{
+    font-size:23px;
+    letter-spacing:2px;
+  }
+
+  .chapter-label{
+    font-size:10px;
+    letter-spacing:2px;
+  }
+
+  .hero-section{
+    margin-bottom:75px;
+  }
+
+  .videos-section{
+    margin-bottom:80px;
+  }
+
+  .videos-intro{
+    font-size:12px;
+    margin-bottom:30px;
+  }
+
+  .video-card{
+    padding:15px 10px 20px;
+  }
+
+  .video-placeholder{
+    min-height:350px;
+  }
+
+  .video-heading{
+    min-height:auto;
+  }
+
+  .memories-section{
+    margin-bottom:80px;
+  }
+
+  .photo-grid{
+    gap:10px;
+  }
+
+  .memory-photo{
+    padding:4px;
+  }
+
+  .chronicle-section{
+    margin-bottom:80px;
+  }
+
+  .chronicle-entry{
+    gap:15px;
+    padding:18px 5px;
+  }
+
+  .chronicle-number{
+    flex-basis:42px;
+    width:42px;
+    height:42px;
+    font-size:16px;
+  }
+
+  .chronicle-text h3{
+    font-size:14px;
+  }
+
+  .attendees-box{
+    padding:35px 15px;
+  }
+
+  .attendees-box h2{
+    font-size:23px;
+  }
+
+  .attendee-list{
+    gap:9px;
+  }
+
+  .attendee-list span{
+    min-width:0;
+    padding:9px 12px;
+    font-size:12px;
+  }
+
+  .ending-quote{
+    font-size:11px;
+    line-height:2.2;
+  }
+
+  /* 手機照片燈箱 */
 
   .photo-lightbox img{
-    max-width:92vw;
-    max-height:75vh;
+    max-width:94vw;
+    max-height:72vh;
+  }
+
+  .lightbox-prev,
+  .lightbox-next{
+    top:auto;
+    bottom:35px;
+    transform:none;
+
+    width:45px;
+    height:45px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(16,27,46,0.65);
+    border:1px solid rgba(184,148,92,0.35);
+
+    border-radius:50%;
   }
 
   .lightbox-prev{
-    left:8px;
-    font-size:28px;
+    left:20px;
   }
 
   .lightbox-next{
-    right:8px;
-    font-size:28px;
+    right:20px;
   }
 
   .lightbox-close{
@@ -1067,6 +1244,23 @@ img{
     top:12px;
   }
 
+  .lightbox-counter{
+    bottom:48px;
+  }
+
 }
 
+/* =========================
+   減少動態效果偏好
+========================= */
 
+@media (prefers-reduced-motion:reduce){
+
+  *,
+  *::before,
+  *::after{
+    scroll-behavior:auto;
+    transition:none !important;
+  }
+
+}

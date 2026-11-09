@@ -16,7 +16,8 @@
 <div class="page">
 
   <!-- =========================
-       左側導覽列：保留原本架構
+       左側導覽列
+       保留原本架構
   ========================= -->
 
   <aside class="sidebar">
@@ -209,24 +210,19 @@
 
             <!-- =====================
                  影片一：形象預告
-                 已填入 Instagram 網址
             ===================== -->
 
             <div class="video-card">
 
               <div class="video-heading">
 
-                <span class="video-number">
-                  
-                </span>
+                <span class="video-number"></span>
 
                 <h3>
                   The Invitation
                 </h3>
 
-                <p>
-                  
-                </p>
+                <p></p>
 
               </div>
 
@@ -262,29 +258,19 @@
 
             <!-- =====================
                  影片二：正式活動紀錄
-
-                 發布後請修改下方
-                 VIDEO_URL_2 的網址
-
-                 例如：
-                 https://www.instagram.com/reel/XXXXXXXX/
             ===================== -->
 
             <div class="video-card">
 
               <div class="video-heading">
 
-                <span class="video-number">
-                  
-                </span>
+                <span class="video-number"></span>
 
                 <h3>
                   The Gathering
                 </h3>
 
-                <p>
-                  
-                </p>
+                <p></p>
 
               </div>
 
@@ -327,26 +313,19 @@
 
             <!-- =====================
                  影片三：製作幕後
-
-                 發布後請修改下方
-                 VIDEO_URL_3 的網址
             ===================== -->
 
             <div class="video-card">
 
               <div class="video-heading">
 
-                <span class="video-number">
-                  
-                </span>
+                <span class="video-number"></span>
 
                 <h3>
                   Behind the Magic
                 </h3>
 
-                <p>
-                  
-                </p>
+                <p></p>
 
               </div>
 
@@ -386,7 +365,6 @@
 
             </div>
 
-
           </div>
 
         </section>
@@ -415,55 +393,53 @@
           <div class="photo-grid">
 
             <figure class="memory-photo">
-              <img src="images/IMG_0796.jpeg"  loading="lazy">
+              <img src="images/IMG_0796.jpeg" alt="活動回憶 01" loading="lazy">
             </figure>
 
             <figure class="memory-photo">
-              <img src="images/IMG_0148.jpeg"  loading="lazy">
+              <img src="images/IMG_0148.jpeg" alt="活動回憶 02" loading="lazy">
             </figure>
 
             <figure class="memory-photo">
-              <img src="images/IMG_6703.jpeg" loading="lazy">
+              <img src="images/IMG_6703.jpeg" alt="活動回憶 03" loading="lazy">
             </figure>
 
             <figure class="memory-photo">
-              <img src="images/IMG_1087.jpeg" loading="lazy">
+              <img src="images/IMG_1087.jpeg" alt="活動回憶 04" loading="lazy">
             </figure>
 
             <figure class="memory-photo">
-              <img src="images/20261024_130351572.jpeg" loading="lazy">
+              <img src="images/20261024_130351572.jpeg" alt="活動回憶 05" loading="lazy">
             </figure>
 
             <figure class="memory-photo">
-              <img src="images/20261024_183408393.jpeg" loading="lazy">
+              <img src="images/20261024_183408393.jpeg" alt="活動回憶 06" loading="lazy">
             </figure>
 
             <figure class="memory-photo">
-              <img src="images/IMG_0243.jpeg" loading="lazy">
+              <img src="images/IMG_0243.jpeg" alt="活動回憶 07" loading="lazy">
             </figure>
 
             <figure class="memory-photo">
-              <img src="images/IMG_6713.jpeg" loading="lazy">
+              <img src="images/IMG_6713.jpeg" alt="活動回憶 08" loading="lazy">
             </figure>
 
-             <figure class="memory-photo">
-              <img src="images/IMG_0193.jpeg" loading="lazy">
+            <figure class="memory-photo">
+              <img src="images/IMG_0193.jpeg" alt="活動回憶 09" loading="lazy">
             </figure>
 
-               <figure class="memory-photo">
-              <img src="images/20261025_080806880.jpeg" loading="lazy">
+            <figure class="memory-photo">
+              <img src="images/20261025_080806880.jpeg" alt="活動回憶 10" loading="lazy">
             </figure>
 
-              <figure class="memory-photo">
-              <img src="images/20261023_180712.jpeg" loading="lazy">
+            <figure class="memory-photo">
+              <img src="images/20261023_180712.jpeg" alt="活動回憶 11" loading="lazy">
             </figure>
 
-               <figure class="memory-photo">
-              <img src="images/IMG_1077.jpeg" loading="lazy">
+            <figure class="memory-photo">
+              <img src="images/IMG_1077.jpeg" alt="活動回憶 12" loading="lazy">
             </figure>
 
-
-            
           </div>
 
         </section>
@@ -607,7 +583,6 @@
 
         </footer>
 
-
       </div>
 
     </article>
@@ -618,9 +593,57 @@
 
 
 <!-- =========================
+     照片放大燈箱
+========================= -->
+
+<div
+  class="photo-lightbox"
+  id="photoLightbox"
+  role="dialog"
+  aria-modal="true"
+  aria-label="照片放大檢視"
+  aria-hidden="true">
+
+  <button
+    type="button"
+    class="lightbox-close"
+    id="lightboxClose"
+    aria-label="關閉照片">
+    &times;
+  </button>
+
+  <button
+    type="button"
+    class="lightbox-prev"
+    id="lightboxPrev"
+    aria-label="上一張照片">
+    &#10094;
+  </button>
+
+  <img
+    id="lightboxImage"
+    alt="放大照片">
+
+  <button
+    type="button"
+    class="lightbox-next"
+    id="lightboxNext"
+    aria-label="下一張照片">
+    &#10095;
+  </button>
+
+  <div
+    class="lightbox-counter"
+    id="lightboxCounter">
+  </div>
+
+</div>
+
+
+<!-- =========================
      Instagram 影片設定
 
-     未來只需要修改這兩行網址
+     未來只需修改以下兩行
 ========================= -->
 
 <script>
@@ -646,7 +669,10 @@ function addInstagramVideo(number, url){
     /^https:\/\/(?:www\.)?instagram\.com\/(?:reel|p)\/[A-Za-z0-9_-]+\/?$/.test(cleanUrl);
 
   if(!validUrl){
-    console.warn("Instagram 影片網址格式錯誤：", number);
+    console.warn(
+      "Instagram 影片網址格式錯誤：",
+      number
+    );
     return;
   }
 
@@ -703,30 +729,314 @@ function addInstagramVideo(number, url){
 
 }
 
-
-/* =========================
-   初始化影片
-========================= */
-
 addInstagramVideo(2, VIDEO_URL_2);
 addInstagramVideo(3, VIDEO_URL_3);
+
+
+/* =========================
+   照片放大功能
+========================= */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function(){
+
+    const photos = Array.from(
+      document.querySelectorAll(
+        ".hero-photo img, .photo-grid img"
+      )
+    );
+
+    const lightbox =
+      document.getElementById("photoLightbox");
+
+    const lightboxImage =
+      document.getElementById("lightboxImage");
+
+    const counter =
+      document.getElementById("lightboxCounter");
+
+    const closeButton =
+      document.getElementById("lightboxClose");
+
+    const prevButton =
+      document.getElementById("lightboxPrev");
+
+    const nextButton =
+      document.getElementById("lightboxNext");
+
+    let currentIndex = 0;
+    let previousFocus = null;
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    function showPhoto(index){
+
+      if(!photos.length){
+        return;
+      }
+
+      currentIndex =
+        (index + photos.length) % photos.length;
+
+      const photo = photos[currentIndex];
+
+      lightboxImage.src = photo.src;
+      lightboxImage.alt = photo.alt;
+
+      counter.textContent =
+        (currentIndex + 1) +
+        " / " +
+        photos.length;
+
+    }
+
+    function openLightbox(index){
+
+      previousFocus = document.activeElement;
+
+      showPhoto(index);
+
+      lightbox.classList.add("active");
+
+      lightbox.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+      document.body.style.overflow = "hidden";
+
+      closeButton.focus();
+
+    }
+
+    function closeLightbox(){
+
+      lightbox.classList.remove("active");
+
+      lightbox.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+      lightboxImage.removeAttribute("src");
+
+      document.body.style.overflow = "";
+
+      if(
+        previousFocus &&
+        typeof previousFocus.focus === "function"
+      ){
+        previousFocus.focus();
+      }
+
+    }
+
+    photos.forEach(function(photo,index){
+
+      photo.setAttribute("tabindex","0");
+      photo.setAttribute("role","button");
+
+      photo.setAttribute(
+        "aria-label",
+        "放大照片：" +
+        (photo.alt || (index + 1))
+      );
+
+      photo.addEventListener(
+        "click",
+        function(){
+          openLightbox(index);
+        }
+      );
+
+      photo.addEventListener(
+        "keydown",
+        function(e){
+
+          if(
+            e.key === "Enter" ||
+            e.key === " "
+          ){
+            e.preventDefault();
+            openLightbox(index);
+          }
+
+        }
+      );
+
+    });
+
+    closeButton.addEventListener(
+      "click",
+      closeLightbox
+    );
+
+    prevButton.addEventListener(
+      "click",
+      function(){
+        showPhoto(currentIndex - 1);
+      }
+    );
+
+    nextButton.addEventListener(
+      "click",
+      function(){
+        showPhoto(currentIndex + 1);
+      }
+    );
+
+    lightbox.addEventListener(
+      "click",
+      function(e){
+
+        if(e.target === lightbox){
+          closeLightbox();
+        }
+
+      }
+    );
+
+    document.addEventListener(
+      "keydown",
+      function(e){
+
+        if(
+          !lightbox.classList.contains("active")
+        ){
+          return;
+        }
+
+        if(e.key === "Escape"){
+          closeLightbox();
+        }
+
+        if(e.key === "ArrowLeft"){
+          showPhoto(currentIndex - 1);
+        }
+
+        if(e.key === "ArrowRight"){
+          showPhoto(currentIndex + 1);
+        }
+
+        if(e.key === "Tab"){
+
+          const controls = [
+            closeButton,
+            prevButton,
+            nextButton
+          ];
+
+          const index =
+            controls.indexOf(document.activeElement);
+
+          if(e.shiftKey && index <= 0){
+            e.preventDefault();
+            nextButton.focus();
+          }
+
+          else if(
+            !e.shiftKey &&
+            index === controls.length - 1
+          ){
+            e.preventDefault();
+            closeButton.focus();
+          }
+
+        }
+
+      }
+    );
+
+
+    /* =========================
+       手機左右滑動切換照片
+    ========================= */
+
+    lightbox.addEventListener(
+      "touchstart",
+      function(e){
+
+        if(!lightbox.classList.contains("active")){
+          return;
+        }
+
+        if(e.touches.length !== 1){
+          return;
+        }
+
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+
+      },
+      {passive:true}
+    );
+
+    lightbox.addEventListener(
+      "touchend",
+      function(e){
+
+        if(!lightbox.classList.contains("active")){
+          return;
+        }
+
+        if(!e.changedTouches.length){
+          return;
+        }
+
+        const deltaX =
+          e.changedTouches[0].clientX -
+          touchStartX;
+
+        const deltaY =
+          e.changedTouches[0].clientY -
+          touchStartY;
+
+        if(
+          Math.abs(deltaX) > 50 &&
+          Math.abs(deltaX) > Math.abs(deltaY)
+        ){
+
+          if(deltaX < 0){
+            showPhoto(currentIndex + 1);
+          }else{
+            showPhoto(currentIndex - 1);
+          }
+
+        }
+
+      },
+      {passive:true}
+    );
+
+  }
+);
 
 
 /* =========================
    保留原本圖片保護
 ========================= */
 
-document.addEventListener("contextmenu", function(e){
-  e.preventDefault();
-});
+document.addEventListener(
+  "contextmenu",
+  function(e){
+    e.preventDefault();
+  }
+);
 
-document.addEventListener("dragstart", function(e){
-  e.preventDefault();
-});
+document.addEventListener(
+  "dragstart",
+  function(e){
+    e.preventDefault();
+  }
+);
 
-document.addEventListener("selectstart", function(e){
-  e.preventDefault();
-});
+document.addEventListener(
+  "selectstart",
+  function(e){
+    e.preventDefault();
+  }
+);
 
 </script>
 

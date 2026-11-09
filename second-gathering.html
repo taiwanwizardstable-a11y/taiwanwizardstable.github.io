@@ -17,7 +17,6 @@
 
   <!-- =========================
        左側導覽列
-       保留原本架構
   ========================= -->
 
   <aside class="sidebar">
@@ -51,7 +50,6 @@
   <main class="content">
 
     <article class="gathering-section">
-
 
       <!-- =========================
            魔法故事書封面
@@ -101,7 +99,6 @@
       ========================= -->
 
       <div class="storybook-pages">
-
 
         <!-- =========================
              活動序言
@@ -180,7 +177,6 @@
 
         <!-- =========================
              魔法影像紀事
-             Instagram Reels
         ========================= -->
 
         <section class="videos-section">
@@ -204,26 +200,16 @@
             有些則被光影悄悄保存
           </p>
 
-
           <div class="video-grid">
 
-
-            <!-- =====================
-                 影片一：形象預告
-            ===================== -->
+            <!-- 影片一：形象預告 -->
 
             <div class="video-card">
 
               <div class="video-heading">
-
                 <span class="video-number"></span>
-
-                <h3>
-                  The Invitation
-                </h3>
-
+                <h3>The Invitation</h3>
                 <p></p>
-
               </div>
 
               <div class="instagram-embed">
@@ -256,22 +242,14 @@
             </div>
 
 
-            <!-- =====================
-                 影片二：正式活動紀錄
-            ===================== -->
+            <!-- 影片二：正式活動紀錄 -->
 
             <div class="video-card">
 
               <div class="video-heading">
-
                 <span class="video-number"></span>
-
-                <h3>
-                  The Gathering
-                </h3>
-
+                <h3>The Gathering</h3>
                 <p></p>
-
               </div>
 
               <div
@@ -311,22 +289,14 @@
             </div>
 
 
-            <!-- =====================
-                 影片三：製作幕後
-            ===================== -->
+            <!-- 影片三：製作幕後 -->
 
             <div class="video-card">
 
               <div class="video-heading">
-
                 <span class="video-number"></span>
-
-                <h3>
-                  Behind the Magic
-                </h3>
-
+                <h3>Behind the Magic</h3>
                 <p></p>
-
               </div>
 
               <div
@@ -649,7 +619,6 @@
 <script>
 
 const VIDEO_URL_2 = "";
-
 const VIDEO_URL_3 = "";
 
 
@@ -735,308 +704,291 @@ addInstagramVideo(3, VIDEO_URL_3);
 
 /* =========================
    照片放大功能
+   修正版：不鎖住整頁捲動
 ========================= */
 
-document.addEventListener(
-  "DOMContentLoaded",
-  function(){
+document.addEventListener("DOMContentLoaded", function(){
 
-    const photos = Array.from(
-      document.querySelectorAll(
-        ".hero-photo img, .photo-grid img"
-      )
+  const photos = Array.from(
+    document.querySelectorAll(
+      ".hero-photo img, .photo-grid img"
+    )
+  );
+
+  const lightbox =
+    document.getElementById("photoLightbox");
+
+  const lightboxImage =
+    document.getElementById("lightboxImage");
+
+  const counter =
+    document.getElementById("lightboxCounter");
+
+  const closeButton =
+    document.getElementById("lightboxClose");
+
+  const prevButton =
+    document.getElementById("lightboxPrev");
+
+  const nextButton =
+    document.getElementById("lightboxNext");
+
+  if(
+    !photos.length ||
+    !lightbox ||
+    !lightboxImage ||
+    !counter ||
+    !closeButton ||
+    !prevButton ||
+    !nextButton
+  ){
+    return;
+  }
+
+  let currentIndex = 0;
+  let previousFocus = null;
+  let touchStartX = null;
+  let touchStartY = null;
+
+
+  function showPhoto(index){
+
+    currentIndex =
+      (index + photos.length) % photos.length;
+
+    const photo = photos[currentIndex];
+
+    lightboxImage.src =
+      photo.currentSrc || photo.src;
+
+    lightboxImage.alt =
+      photo.alt || "活動照片";
+
+    counter.textContent =
+      (currentIndex + 1) + " / " + photos.length;
+
+  }
+
+
+  function openLightbox(index){
+
+    previousFocus = document.activeElement;
+
+    showPhoto(index);
+
+    lightbox.classList.add("active");
+
+    lightbox.setAttribute(
+      "aria-hidden",
+      "false"
     );
 
-    const lightbox =
-      document.getElementById("photoLightbox");
+    closeButton.focus();
 
-    const lightboxImage =
-      document.getElementById("lightboxImage");
+  }
 
-    const counter =
-      document.getElementById("lightboxCounter");
 
-    const closeButton =
-      document.getElementById("lightboxClose");
+  function closeLightbox(){
 
-    const prevButton =
-      document.getElementById("lightboxPrev");
+    lightbox.classList.remove("active");
 
-    const nextButton =
-      document.getElementById("lightboxNext");
+    lightbox.setAttribute(
+      "aria-hidden",
+      "true"
+    );
 
-    let currentIndex = 0;
-    let previousFocus = null;
-    let touchStartX = 0;
-    let touchStartY = 0;
+    lightboxImage.removeAttribute("src");
 
-    function showPhoto(index){
+    if(
+      previousFocus &&
+      typeof previousFocus.focus === "function"
+    ){
+      previousFocus.focus();
+    }
 
-      if(!photos.length){
-        return;
+  }
+
+
+  /* 點擊照片放大 */
+
+  photos.forEach(function(photo,index){
+
+    photo.setAttribute("tabindex","0");
+    photo.setAttribute("role","button");
+
+    photo.setAttribute(
+      "aria-label",
+      "放大照片：" +
+      (photo.alt || (index + 1))
+    );
+
+    photo.addEventListener("click",function(){
+      openLightbox(index);
+    });
+
+    photo.addEventListener("keydown",function(e){
+
+      if(e.key === "Enter" || e.key === " "){
+        e.preventDefault();
+        openLightbox(index);
       }
-
-      currentIndex =
-        (index + photos.length) % photos.length;
-
-      const photo = photos[currentIndex];
-
-      lightboxImage.src = photo.src;
-      lightboxImage.alt = photo.alt;
-
-      counter.textContent =
-        (currentIndex + 1) +
-        " / " +
-        photos.length;
-
-    }
-
-    function openLightbox(index){
-
-      previousFocus = document.activeElement;
-
-      showPhoto(index);
-
-      lightbox.classList.add("active");
-
-      lightbox.setAttribute(
-        "aria-hidden",
-        "false"
-      );
-
-      document.body.style.overflow = "hidden";
-
-      closeButton.focus();
-
-    }
-
-    function closeLightbox(){
-
-      lightbox.classList.remove("active");
-
-      lightbox.setAttribute(
-        "aria-hidden",
-        "true"
-      );
-
-      lightboxImage.removeAttribute("src");
-
-      document.body.style.overflow = "";
-
-      if(
-        previousFocus &&
-        typeof previousFocus.focus === "function"
-      ){
-        previousFocus.focus();
-      }
-
-    }
-
-    photos.forEach(function(photo,index){
-
-      photo.setAttribute("tabindex","0");
-      photo.setAttribute("role","button");
-
-      photo.setAttribute(
-        "aria-label",
-        "放大照片：" +
-        (photo.alt || (index + 1))
-      );
-
-      photo.addEventListener(
-        "click",
-        function(){
-          openLightbox(index);
-        }
-      );
-
-      photo.addEventListener(
-        "keydown",
-        function(e){
-
-          if(
-            e.key === "Enter" ||
-            e.key === " "
-          ){
-            e.preventDefault();
-            openLightbox(index);
-          }
-
-        }
-      );
 
     });
 
-    closeButton.addEventListener(
-      "click",
-      closeLightbox
-    );
+  });
 
-    prevButton.addEventListener(
-      "click",
-      function(){
-        showPhoto(currentIndex - 1);
+
+  /* 關閉按鈕 */
+
+  closeButton.addEventListener(
+    "click",
+    function(e){
+      e.preventDefault();
+      closeLightbox();
+    }
+  );
+
+
+  /* 左右切換 */
+
+  prevButton.addEventListener(
+    "click",
+    function(e){
+      e.preventDefault();
+      showPhoto(currentIndex - 1);
+    }
+  );
+
+  nextButton.addEventListener(
+    "click",
+    function(e){
+      e.preventDefault();
+      showPhoto(currentIndex + 1);
+    }
+  );
+
+
+  /* 點擊黑色背景關閉 */
+
+  lightbox.addEventListener("click",function(e){
+
+    if(
+      e.target === lightbox ||
+      e.target === lightboxImage
+    ){
+      closeLightbox();
+    }
+
+  });
+
+
+  /* 鍵盤操作 */
+
+  document.addEventListener("keydown",function(e){
+
+    if(!lightbox.classList.contains("active")){
+      return;
+    }
+
+    if(e.key === "Escape"){
+      closeLightbox();
+    }
+
+    if(e.key === "ArrowLeft"){
+      e.preventDefault();
+      showPhoto(currentIndex - 1);
+    }
+
+    if(e.key === "ArrowRight"){
+      e.preventDefault();
+      showPhoto(currentIndex + 1);
+    }
+
+  });
+
+
+  /* =========================
+     手機左右滑動
+  ========================= */
+
+  lightbox.addEventListener(
+    "touchstart",
+    function(e){
+
+      if(e.touches.length !== 1){
+        return;
       }
-    );
 
-    nextButton.addEventListener(
-      "click",
-      function(){
-        showPhoto(currentIndex + 1);
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+
+    },
+    {passive:true}
+  );
+
+
+  lightbox.addEventListener(
+    "touchend",
+    function(e){
+
+      if(
+        touchStartX === null ||
+        touchStartY === null ||
+        !e.changedTouches.length
+      ){
+        return;
       }
-    );
 
-    lightbox.addEventListener(
-      "click",
-      function(e){
+      const deltaX =
+        e.changedTouches[0].clientX -
+        touchStartX;
 
-        if(e.target === lightbox){
-          closeLightbox();
-        }
+      const deltaY =
+        e.changedTouches[0].clientY -
+        touchStartY;
 
-      }
-    );
+      touchStartX = null;
+      touchStartY = null;
 
-    document.addEventListener(
-      "keydown",
-      function(e){
+      if(
+        Math.abs(deltaX) > 50 &&
+        Math.abs(deltaX) > Math.abs(deltaY)
+      ){
 
-        if(
-          !lightbox.classList.contains("active")
-        ){
-          return;
-        }
-
-        if(e.key === "Escape"){
-          closeLightbox();
-        }
-
-        if(e.key === "ArrowLeft"){
+        if(deltaX < 0){
+          showPhoto(currentIndex + 1);
+        }else{
           showPhoto(currentIndex - 1);
         }
 
-        if(e.key === "ArrowRight"){
-          showPhoto(currentIndex + 1);
-        }
-
-        if(e.key === "Tab"){
-
-          const controls = [
-            closeButton,
-            prevButton,
-            nextButton
-          ];
-
-          const index =
-            controls.indexOf(document.activeElement);
-
-          if(e.shiftKey && index <= 0){
-            e.preventDefault();
-            nextButton.focus();
-          }
-
-          else if(
-            !e.shiftKey &&
-            index === controls.length - 1
-          ){
-            e.preventDefault();
-            closeButton.focus();
-          }
-
-        }
-
       }
-    );
 
+    },
+    {passive:true}
+  );
 
-    /* =========================
-       手機左右滑動切換照片
-    ========================= */
-
-    lightbox.addEventListener(
-      "touchstart",
-      function(e){
-
-        if(!lightbox.classList.contains("active")){
-          return;
-        }
-
-        if(e.touches.length !== 1){
-          return;
-        }
-
-        touchStartX = e.touches[0].clientX;
-        touchStartY = e.touches[0].clientY;
-
-      },
-      {passive:true}
-    );
-
-    lightbox.addEventListener(
-      "touchend",
-      function(e){
-
-        if(!lightbox.classList.contains("active")){
-          return;
-        }
-
-        if(!e.changedTouches.length){
-          return;
-        }
-
-        const deltaX =
-          e.changedTouches[0].clientX -
-          touchStartX;
-
-        const deltaY =
-          e.changedTouches[0].clientY -
-          touchStartY;
-
-        if(
-          Math.abs(deltaX) > 50 &&
-          Math.abs(deltaX) > Math.abs(deltaY)
-        ){
-
-          if(deltaX < 0){
-            showPhoto(currentIndex + 1);
-          }else{
-            showPhoto(currentIndex - 1);
-          }
-
-        }
-
-      },
-      {passive:true}
-    );
-
-  }
-);
+});
 
 
 /* =========================
-   保留原本圖片保護
+   保留圖片基本保護
 ========================= */
 
-document.addEventListener(
-  "contextmenu",
-  function(e){
-    e.preventDefault();
-  }
-);
+document.addEventListener("contextmenu",function(e){
 
-document.addEventListener(
-  "dragstart",
-  function(e){
+  if(e.target.closest("img")){
     e.preventDefault();
   }
-);
 
-document.addEventListener(
-  "selectstart",
-  function(e){
+});
+
+document.addEventListener("dragstart",function(e){
+
+  if(e.target.closest("img")){
     e.preventDefault();
   }
-);
+
+});
 
 </script>
 

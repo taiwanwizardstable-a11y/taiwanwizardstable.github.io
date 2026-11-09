@@ -1,55 +1,54 @@
 
 /* =====================================
    TWT HOUSE CUP
-   Slow Magical Crystal Collection
+   Magical Crystal Collection
+
+   固定積分比例版本
 ===================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
 
   const houseCards = document.querySelectorAll(".house-card");
 
-  const scores = Array.from(houseCards).map(card =>
-    Math.max(0, Number(card.dataset.score) || 0)
-  );
-
-  const maxScore = Math.max(...scores, 1);
-
   const reduceMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
   ).matches;
 
   /* =====================================
-     動畫設定
-     以後可以自行調整
+     積分與動畫設定
+     日後可以從這裡調整
   ===================================== */
 
   const SETTINGS = {
 
-    // 寶石累積時間：毫秒
+    // 多少積分達到寶石滿格基準
+    scoreCap: 20000,
+
+    // 滿格時佔玻璃櫃高度的比例
+    // 0.85 = 85%
+    maxFillRatio: 0.85,
+
+    // 寶石累積動畫時間
     // 18000 = 18秒
     fillDuration: 18000,
 
     // 第一顆寶石開始掉落的延遲
     startDelay: 500,
 
-    // 單顆寶石落下時間
+    // 單顆寶石落下的時間
     fallDurationMin: 1200,
     fallDurationMax: 2100,
 
-    // 最大填充比例
-    // 0.55 = 展示櫃高度的55%
-    maxFillRatio: 0.55,
-
-    // 每顆寶石代表多少積分
+    // 每顆寶石約代表多少積分
     pointsPerGem: 35,
 
-    // 寶石落下後的微光動畫
+    // 持續柔和發光
     enableAmbientGlow: true
 
   };
 
   /* =====================================
-     四學院寶石顏色
+     四學院寶石配色
   ===================================== */
 
   const palettes = {
@@ -86,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* =====================================
      固定隨機數
+     讓每次載入排列自然且穩定
   ===================================== */
 
   function seededRandom(seed) {
@@ -109,6 +109,8 @@ document.addEventListener("DOMContentLoaded", function () {
   ===================================== */
 
   function animateScore(element, target) {
+
+    if (!element) return;
 
     if (reduceMotion) {
       element.textContent = target;
@@ -138,9 +140,13 @@ document.addEventListener("DOMContentLoaded", function () {
       );
 
       if (progress < 1) {
+
         requestAnimationFrame(update);
+
       } else {
+
         element.textContent = target;
+
       }
 
     }
@@ -238,18 +244,44 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const glassHeight = glass.clientHeight;
 
+    const glassWidth = glass.clientWidth;
+
+    /* =====================================
+       固定積分比例計算
+
+       20,000分 = 85%高度
+       超過20,000分不溢出
+    ===================================== */
+
+    const scoreRatio = Math.min(
+      finalScore / SETTINGS.scoreCap,
+      1
+    );
+
+    const availableHeight = Math.max(
+      0,
+      glassHeight - 24
+    );
+
+    const maxPileHeight = Math.min(
+      glassHeight * SETTINGS.maxFillRatio,
+      availableHeight
+    );
+
     const targetHeight = finalScore <= 0
       ? 0
       : Math.max(
-          12,
-          (finalScore / maxScore) *
-          glassHeight *
-          SETTINGS.maxFillRatio
+          8,
+          scoreRatio * maxPileHeight
         );
 
     pile.style.height = targetHeight + "px";
 
     if (finalScore <= 0) return;
+
+    /* =====================================
+       寶石排列
+    ===================================== */
 
     const pileWidth = pile.clientWidth;
 
@@ -280,7 +312,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const gems = [];
 
     /* =====================================
-       計算每顆寶石的位置
+       計算寶石堆積位置
     ===================================== */
 
     for (let i = 0; i < totalGems; i++) {
@@ -312,7 +344,7 @@ document.addEventListener("DOMContentLoaded", function () {
         (random() - 0.5) * 3;
 
       const bottom = Math.min(
-        targetHeight - 8,
+        Math.max(0, targetHeight - 8),
         row * rowHeight + jitterY
       );
 
@@ -336,7 +368,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     /* =====================================
-       減少動畫設定
+       減少動態設定
     ===================================== */
 
     if (reduceMotion) return;
@@ -407,7 +439,7 @@ document.addEventListener("DOMContentLoaded", function () {
       );
 
       /* =====================================
-         寶石落地後持續微光
+         落地後持續微光
       ===================================== */
 
       if (SETTINGS.enableAmbientGlow) {

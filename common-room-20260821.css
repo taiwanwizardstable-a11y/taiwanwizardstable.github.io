@@ -1,0 +1,474 @@
+
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap');
+
+/* =========================
+   基本設定
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #050505;
+  color: #f1eee7;
+  font-family: "Noto Serif TC", serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* =========================
+   頁面整體架構
+========================= */
+
+.page {
+  display: flex;
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.72),
+      rgba(0, 0, 0, 0.90)
+    ),
+    url("IMG_0580.png");
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* =========================
+   左側導覽列
+========================= */
+
+.sidebar {
+  width: 280px;
+  min-width: 280px;
+  min-height: 100vh;
+
+  padding: 45px 25px;
+
+  background: rgba(0, 0, 0, 0.76);
+  border-right: 1px solid rgba(185, 157, 99, 0.25);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  display: block;
+  width: 185px;
+  height: auto;
+  margin: 0 auto 55px;
+  object-fit: contain;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 23px;
+  width: 100%;
+}
+
+.sidebar nav a {
+  font-family: "Cinzel", serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+
+  color: #d6d0c5;
+
+  transition: color 0.3s ease;
+}
+
+.sidebar nav a:hover {
+  color: #c7a76a;
+}
+
+/* =========================
+   主要內容區域
+========================= */
+
+.content {
+  flex: 1;
+  min-width: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 65px 45px 90px;
+}
+
+/* =========================
+   活動紀錄區域
+========================= */
+
+.entry-section {
+  width: 100%;
+  max-width: 850px;
+}
+
+.entry-card {
+  width: 100%;
+
+  padding: 45px 55px 55px;
+
+  background: rgba(10, 10, 10, 0.76);
+
+  border: 1px solid rgba(191, 164, 110, 0.36);
+
+  text-align: center;
+}
+
+/* =========================
+   活動日期
+========================= */
+
+.entry-date {
+  font-family: "Cinzel", serif;
+  font-size: 25px;
+  font-weight: 500;
+
+  letter-spacing: 3px;
+  color: #d7c09a;
+
+  margin-bottom: 35px;
+}
+
+/* =========================
+   活動照片
+========================= */
+
+.entry-photo {
+  width: 100%;
+  margin: 0 auto 42px;
+}
+
+.entry-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  max-height: 650px;
+
+  object-fit: contain;
+
+  border: 1px solid rgba(191, 164, 110, 0.25);
+}
+
+/* =========================
+   活動資訊區塊
+========================= */
+
+.entry-block {
+  margin-bottom: 38px;
+}
+
+.section-title {
+  font-family: "Cinzel", serif;
+  font-size: 17px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+  color: #c9aa74;
+
+  margin: 0 0 22px;
+}
+
+/* =========================
+   巫師名單
+========================= */
+
+.people-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  gap: 13px 22px;
+
+  line-height: 2;
+}
+
+.people-list span {
+  font-family: "Noto Serif TC", serif;
+  font-size: 15px;
+  font-weight: 500;
+
+  white-space: nowrap;
+}
+
+/* =========================
+   四學院代表色
+========================= */
+
+.gryffindor {
+  color: #c96b65;
+}
+
+.slytherin {
+  color: #83aa91;
+}
+
+.ravenclaw {
+  color: #91add0;
+}
+
+.hufflepuff {
+  color: #d8bc75;
+}
+
+/* =========================
+   Instagram Reel 按鈕
+========================= */
+
+.reel-button {
+  display: inline-block;
+
+  margin: 10px auto 35px;
+  padding: 12px 32px;
+
+  border: 1px solid #b79a67;
+
+  color: #d7c09a;
+  background: transparent;
+
+  font-family: "Cinzel", serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+
+  transition: all 0.3s ease;
+}
+
+.reel-button:hover {
+  background: #b79a67;
+  color: #080808;
+}
+
+/* =========================
+   Tracks Map 圖片連結
+========================= */
+
+.map-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 20px auto 25px;
+}
+
+.map-link a {
+  display: inline-block;
+}
+
+.map-link img {
+  display: block;
+
+  width: 105px;
+  height: auto;
+
+  object-fit: contain;
+
+  opacity: 0.85;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.map-link img:hover {
+  opacity: 1;
+  transform: scale(1.06);
+}
+
+/* =========================
+   返回 Common Room
+========================= */
+
+.back-link {
+  margin-top: 25px;
+}
+
+.back-link a {
+  font-family: "Cinzel", serif;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+
+  color: #b9a37e;
+
+  transition: color 0.3s ease;
+}
+
+.back-link a:hover {
+  color: #f0d6a5;
+}
+
+/* =========================
+   平板版面
+========================= */
+
+@media (max-width: 1100px) {
+
+  .sidebar {
+    width: 235px;
+    min-width: 235px;
+    padding: 35px 18px;
+  }
+
+  .logo {
+    width: 160px;
+  }
+
+  .sidebar nav a {
+    font-size: 13px;
+  }
+
+  .content {
+    padding: 45px 25px 70px;
+  }
+
+  .entry-card {
+    padding: 35px 30px 45px;
+  }
+
+}
+
+/* =========================
+   手機版面
+========================= */
+
+@media (max-width: 768px) {
+
+  .page {
+    flex-direction: column;
+    background-attachment: scroll;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-width: 0;
+    min-height: auto;
+
+    padding: 25px 15px 20px;
+
+    border-right: none;
+    border-bottom: 1px solid rgba(185, 157, 99, 0.25);
+  }
+
+  .logo {
+    width: 135px;
+    margin-bottom: 25px;
+  }
+
+  .sidebar nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 12px 18px;
+  }
+
+  .sidebar nav a {
+    font-size: 11px;
+    letter-spacing: 0.5px;
+  }
+
+  .content {
+    width: 100%;
+    padding: 35px 15px 60px;
+  }
+
+  .entry-section {
+    max-width: 100%;
+  }
+
+  .entry-card {
+    padding: 30px 18px 40px;
+  }
+
+  .entry-date {
+    font-size: 19px;
+    letter-spacing: 1.5px;
+    margin-bottom: 28px;
+  }
+
+  .entry-photo {
+    margin-bottom: 35px;
+  }
+
+  .entry-photo img {
+    max-height: none;
+  }
+
+  .entry-block {
+    margin-bottom: 32px;
+  }
+
+  .section-title {
+    font-size: 15px;
+  }
+
+  .people-list {
+    gap: 10px 17px;
+  }
+
+  .people-list span {
+    font-size: 13px;
+  }
+
+  .reel-button {
+    font-size: 12px;
+    padding: 11px 25px;
+  }
+
+  .map-link img {
+    width: 90px;
+  }
+
+  .back-link a {
+    font-size: 12px;
+  }
+
+}
+
+/* =========================
+   小型手機
+========================= */
+
+@media (max-width: 380px) {
+
+  .entry-card {
+    padding: 25px 12px 35px;
+  }
+
+  .entry-date {
+    font-size: 17px;
+  }
+
+  .people-list {
+    gap: 8px 12px;
+  }
+
+  .people-list span {
+    font-size: 12px;
+  }
+
+}

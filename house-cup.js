@@ -29,20 +29,20 @@ document.addEventListener("DOMContentLoaded", function () {
     maxFillRatio: 0.85,
 
     // 寶石累積動畫時間
-    // 18000 = 18秒
-    fillDuration: 18000,
+    // 8000 = 8秒
+    fillDuration: 8000,
 
     // 第一顆寶石開始掉落的延遲
     startDelay: 500,
 
     // 單顆寶石落下的時間
-    fallDurationMin: 1200,
-    fallDurationMax: 2100,
+    fallDurationMin: 700,
+    fallDurationMax: 1200,
 
     // 每顆寶石約代表多少積分
     pointsPerGem: 35,
 
-    // 持續柔和發光
+    // 落地後持續柔和發光
     enableAmbientGlow: true
 
   };
@@ -243,8 +243,6 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
     const glassHeight = glass.clientHeight;
-
-    const glassWidth = glass.clientWidth;
 
     /* =====================================
        固定積分比例計算

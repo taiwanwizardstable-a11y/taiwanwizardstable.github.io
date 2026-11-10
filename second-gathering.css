@@ -432,6 +432,7 @@ nav a:hover{
 
 /* =========================
    Instagram 影片區
+   修改：單欄置中排列
 ========================= */
 
 .videos-section{
@@ -441,6 +442,8 @@ nav a:hover{
   text-align:center;
 }
 
+/* 影片介紹文字 */
+
 .videos-intro{
   margin:0 auto 45px;
   color:#745638;
@@ -449,15 +452,29 @@ nav a:hover{
   letter-spacing:1px;
 }
 
+/* 三支影片由上往下排列 */
+
 .video-grid{
   display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:25px;
+
+  grid-template-columns:minmax(0,1fr);
+
+  gap:40px;
+
+  justify-items:center;
   align-items:start;
+
+  width:100%;
 }
 
+/* 每支影片獨立置中 */
+
 .video-card{
+  width:100%;
+  max-width:440px;
   min-width:0;
+
+  margin:0 auto;
   padding:20px 15px 25px;
 
   background:rgba(255,249,230,0.35);
@@ -465,6 +482,8 @@ nav a:hover{
 
   box-shadow:0 8px 25px rgba(70,47,26,0.12);
 }
+
+/* 影片標題 */
 
 .video-heading{
   min-height:100px;
@@ -506,8 +525,11 @@ nav a:hover{
   display:none;
 }
 
+/* Instagram 嵌入影片 */
+
 .instagram-embed{
   width:100%;
+  max-width:100%;
   min-width:0;
   overflow:hidden;
 }
@@ -516,6 +538,8 @@ nav a:hover{
   margin:0 auto !important;
   max-width:540px !important;
 }
+
+/* 尚未公開影片的預告畫面 */
 
 .video-placeholder{
   min-height:420px;
@@ -561,6 +585,8 @@ nav a:hover{
   letter-spacing:1px;
 }
 
+/* Instagram 連結按鈕 */
+
 .instagram-link{
   display:inline-block;
   margin-top:20px;
@@ -581,6 +607,8 @@ nav a:hover{
   color:#fff3d8;
   background:#6b4d30;
 }
+
+/* 隱藏未啟用影片區塊 */
 
 .video-placeholder[hidden],
 .instagram-embed[hidden],
@@ -977,12 +1005,13 @@ img{
 
 /* =========================
    Instagram 影片響應式
+   所有尺寸保持單欄
 ========================= */
 
 @media(max-width:1100px){
 
   .video-grid{
-    grid-template-columns:1fr;
+    grid-template-columns:minmax(0,1fr);
   }
 
   .video-card{
